@@ -1,0 +1,11 @@
+{
+  "name": "@tailor-platform/function-types",
+  "version": "0.1.0",
+  "description": "TypeScript types for Tailor Platform Funcion service",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tailor-platform/function"
+  },
+  "author": "",
+  "packageManager": "pnpm@10.4.1"
+}
