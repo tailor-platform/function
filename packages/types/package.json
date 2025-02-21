@@ -1,6 +1,6 @@
 {
   "name": "@tailor-platform/function-types",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "TypeScript types for Tailor Platform Function service",
   "repository": {
     "type": "git",
