@@ -1,0 +1,43 @@
+{
+  "name": "@tailor-platform/function-kysely-tailordb",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Kysely dialect for TailorDB",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "scripts": {
+    "check": "biome check .",
+    "check-write": "biome check --write .",
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@10.4.1",
+  "devDependencies": {
+    "@tailor-platform/function-types": "0.1.4",
+    "@tsconfig/recommended": "1.0.8",
+    "kysely": "0.27.5",
+    "tsup": "8.3.6",
+    "typescript": "5.7.3"
+  },
+  "peerDependencies": {
+    "kysely": "0.27.5"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
