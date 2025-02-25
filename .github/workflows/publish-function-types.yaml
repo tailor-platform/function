@@ -1,0 +1,36 @@
+name: Publish npm package function-types
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
+        with:
+          node-version-file: packages/types/package.json
+          registry-url: https://registry.npmjs.org
+
+      - name: Update npm and corepack
+        run: |
+          npm i -g npm
+          npm i -g corepack@latest
+
+      - name: Publish
+        working-directory: packages/types
+        run: |
+          corepack enable
+          pnpm install
+          pnpm publish --no-git-checks --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
