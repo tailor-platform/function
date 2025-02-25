@@ -21,11 +21,6 @@ jobs:
           node-version-file: packages/types/package.json
           registry-url: https://registry.npmjs.org
 
-      - name: Update npm and corepack
-        run: |
-          npm i -g npm
-          npm i -g corepack@latest
-
       - name: Publish
         working-directory: packages/types
         run: |
