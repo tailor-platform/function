@@ -7,7 +7,7 @@
     "url": "https://github.com/tailor-platform/function",
     "directory": "packages/types"
   },
-  "types": "./tailordb.d.ts",
+  "types": "./tailor.d.ts",
   "author": "",
   "packageManager": "pnpm@10.5.2"
 }

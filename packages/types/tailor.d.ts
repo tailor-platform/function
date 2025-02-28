@@ -29,3 +29,10 @@ declare namespace Tailordb {
 declare const tailordb: {
   Client: typeof Tailordb.Client;
 };
+
+declare namespace tailor.secretmanager {
+  // getSecrets returns multiple secret objects(key=name, value=secret) at once according to vault, names
+  function getSecrets(vault: string, names: string[]): Promise<Record<string, string>>
+  // getSecret returns a secret according to vault, name
+  function getSecret(vault: string, name: string): Promise<string>
+}
