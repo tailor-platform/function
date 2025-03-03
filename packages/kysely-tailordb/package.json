@@ -23,7 +23,7 @@
   ],
   "packageManager": "pnpm@10.5.2",
   "devDependencies": {
-    "@tailor-platform/function-types": "0.1.4",
+    "@tailor-platform/function-types": "0.2.0",
     "@tsconfig/recommended": "1.0.8",
     "kysely": "0.27.5",
     "tsup": "8.4.0",
