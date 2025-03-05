@@ -25,12 +25,12 @@
   "devDependencies": {
     "@tailor-platform/function-types": "0.2.0",
     "@tsconfig/recommended": "1.0.8",
-    "kysely": "0.27.5",
+    "kysely": "0.27.6",
     "tsup": "8.4.0",
     "typescript": "5.8.2"
   },
   "peerDependencies": {
-    "kysely": "0.27.5"
+    "kysely": "0.27.6"
   },
   "engines": {
     "node": "22.x"
