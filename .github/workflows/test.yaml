@@ -1,0 +1,66 @@
+name: Test
+
+on: pull_request
+
+permissions: {}
+
+jobs:
+  path-filter:
+    timeout-minutes: 10
+    outputs:
+      action: ${{ steps.changes.outputs.action }}
+      renovate: ${{ steps.changes.outputs.renovate }}
+      kysely-tailordb: ${{ steps.changes.outputs.kysely-tailordb }}
+      types: ${{ steps.changes.outputs.types }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: changes
+        with:
+          filters: |
+            action:
+              - .github/workflows/*
+            renovate:
+              - renovate.json
+            kysely-tailordb:
+              - packages/kysely-tailordb/**
+            types:
+              - packages/types/**
+
+  status-check:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    needs:
+      - action
+      - renovate
+      - kysely-tailordb
+    permissions: {}
+    if: failure()
+    steps:
+      - run: exit 1
+
+  action:
+    uses: ./.github/workflows/lint-workflow.yaml
+    needs: path-filter
+    if: needs.path-filter.outputs.action == 'true'
+    permissions:
+      contents: read
+
+  renovate:
+    uses: ./.github/workflows/validate-renovate-config.yaml
+    needs: path-filter
+    if: needs.path-filter.outputs.renovate == 'true'
+    permissions:
+      contents: read
+
+  kysely-tailordb:
+    uses: ./.github/workflows/test-function-kysely-tailordb.yaml
+    needs: path-filter
+    if: needs.path-filter.outputs.kysely-tailordb == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
