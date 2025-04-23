@@ -1,0 +1,43 @@
+name: Test packages/kysely-tailordb
+
+on: workflow_call
+
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: packages/kysely-tailordb/package.json
+          registry-url: https://registry.npmjs.org
+
+      - name: Setup pnpm
+        run: |
+          npm i -g corepack@latest
+          corepack enable
+
+      - name: Install deps
+        working-directory: packages/kysely-tailordb
+        run: |
+          pnpm install
+
+      - name: Lint
+        working-directory: packages/kysely-tailordb
+        run: |
+          pnpm run check
+
+      - name: Run type-check
+        working-directory: packages/kysely-tailordb
+        run: |
+          pnpm run type-check
+
+      - name: Build
+        working-directory: packages/kysely-tailordb
+        run: |
+          pnpm run build

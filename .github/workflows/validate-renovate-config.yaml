@@ -1,9 +1,6 @@
 name: Validate Renovate config
 
-on:
-  pull_request:
-    paths:
-      - renovate.json
+on: workflow_call
 
 jobs:
   validate:

@@ -84,7 +84,6 @@ class TailordbConnection implements DatabaseConnection {
       const numAffectedRows = BigInt(result.rowCount);
       return {
         numAffectedRows,
-        numUpdatedOrDeletedRows: numAffectedRows,
         rows,
       };
     }
