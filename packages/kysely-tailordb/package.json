@@ -30,7 +30,7 @@
     "@tailor-platform/function-types": "0.2.0",
     "@tsconfig/recommended": "1.0.8",
     "kysely": "0.28.1",
-    "tsup": "8.4.0",
+    "tsup": "8.5.0",
     "typescript": "5.8.3"
   },
   "peerDependencies": {
