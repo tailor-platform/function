@@ -1,6 +1,6 @@
-import { build } from "esbuild";
 import { createRequire } from "node:module";
 import path from "node:path";
+import { build } from "esbuild";
 import { nodeless } from "unenv";
 
 const require = createRequire(import.meta.url);

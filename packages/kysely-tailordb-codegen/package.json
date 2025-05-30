@@ -11,11 +11,11 @@
   "bin": {
     "kysely-tailordb-codegen": "./dist/cli.js"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "node ./build.mjs",
+    "check": "biome check .",
+    "check-write": "biome check --write .",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "zx": "^8.5.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@tailor-platform/function-kysely-tailordb": "^0.1.2",
     "@tailor-platform/function-types": "^0.2.0",
     "@tsconfig/recommended": "^1.0.8",
@@ -34,5 +35,11 @@
     "typescript": "^5.8.3",
     "unenv": "^1.10.0"
   },
-  "packageManager": "pnpm@10.11.0"
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "pnpm": {
+    "onlyBuiltDependencies": ["@biomejs/biome"]
+  }
 }

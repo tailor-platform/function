@@ -18,7 +18,7 @@ const script = path.join(import.meta.dirname, "function.js");
 const out = path.resolve(process.cwd(), output);
 
 console.log(
-  `Generating code for TailorDB namespace "${namespace}" in app "${app}"...`
+  `Generating code for TailorDB namespace "${namespace}" in app "${app}"...`,
 );
 
 const result =
@@ -29,17 +29,20 @@ if (!result.ok) {
   program.error(
     `${chalk.red.bold("ERROR")} tailorctl failed with exit code ${
       result.exitCode
-    }.\n${result.stderr}`
+    }.\n${result.stderr}`,
   );
 }
 
-let json;
+let json: { data: string };
 try {
   const match = result.stdout.match(/\{"data":.*\}/);
-  json = JSON.parse(match![0]);
+  if (!match) {
+    throw new Error("No JSON data found in output.");
+  }
+  json = JSON.parse(match[0]);
 } catch {
   program.error(
-    `${chalk.red.bold("ERROR")} Failed to parse output from tailorctl.`
+    `${chalk.red.bold("ERROR")} Failed to parse output from tailorctl.`,
   );
 }
 
