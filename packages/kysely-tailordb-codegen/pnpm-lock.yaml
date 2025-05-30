@@ -24,9 +24,6 @@ importers:
       '@tailor-platform/function-types':
         specifier: ^0.2.0
         version: 0.2.0
-      '@tsconfig/recommended':
-        specifier: ^1.0.8
-        version: 1.0.8
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -270,9 +267,6 @@ packages:
 
   '@tailor-platform/function-types@0.2.0':
     resolution: {integrity: sha512-MryN5diFLKiij6snsHhbFWDKvXHibGEXqxT8m6Ar0T6IRQIaQu77IEwOU9bTf3dO0IE+tIGaXw4NbjIREDHbKg==}
-
-  '@tsconfig/recommended@1.0.8':
-    resolution: {integrity: sha512-TotjFaaXveVUdsrXCdalyF6E5RyG6+7hHHQVZonQtdlk1rJZ1myDIvPUUKPhoYv+JAzThb2lQJh9+9ZfF46hsA==}
 
   '@types/fs-extra@11.0.4':
     resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
@@ -727,8 +721,6 @@ snapshots:
       kysely: 0.27.6
 
   '@tailor-platform/function-types@0.2.0': {}
-
-  '@tsconfig/recommended@1.0.8': {}
 
   '@types/fs-extra@11.0.4':
     dependencies:
