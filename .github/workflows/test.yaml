@@ -11,6 +11,7 @@ jobs:
       action: ${{ steps.changes.outputs.action }}
       renovate: ${{ steps.changes.outputs.renovate }}
       kysely-tailordb: ${{ steps.changes.outputs.kysely-tailordb }}
+      kysely-tailordb-codegen: ${{ steps.changes.outputs.kysely-tailordb-codegen }}
       types: ${{ steps.changes.outputs.types }}
     runs-on: ubuntu-latest
     permissions:
@@ -28,6 +29,8 @@ jobs:
               - renovate.json
             kysely-tailordb:
               - packages/kysely-tailordb/**
+            kysely-tailordb-codegen:
+              - packages/kysely-tailordb-codegen/**
             types:
               - packages/types/**
 
@@ -38,6 +41,7 @@ jobs:
       - action
       - renovate
       - kysely-tailordb
+      - kysely-tailordb-codegen
     permissions: {}
     if: failure()
     steps:
@@ -61,6 +65,14 @@ jobs:
     uses: ./.github/workflows/test-function-kysely-tailordb.yaml
     needs: path-filter
     if: needs.path-filter.outputs.kysely-tailordb == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
+  
+  kysely-tailordb-codegen:
+    uses: ./.github/workflows/test-function-kysely-tailordb-codegen.yaml
+    needs: path-filter
+    if: needs.path-filter.outputs.kysely-tailordb-codegen == 'true'
     permissions:
       contents: read
       pull-requests: write
