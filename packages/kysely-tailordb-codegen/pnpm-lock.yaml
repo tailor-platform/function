@@ -16,34 +16,34 @@ importers:
         version: 8.5.4
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.9.4
+        specifier: 1.9.4
         version: 1.9.4
       '@tailor-platform/function-kysely-tailordb':
-        specifier: ^0.1.2
+        specifier: 0.1.2
         version: 0.1.2(kysely@0.27.6)
       '@tailor-platform/function-types':
-        specifier: ^0.2.0
+        specifier: 0.2.0
         version: 0.2.0
       '@types/fs-extra':
-        specifier: ^11.0.4
+        specifier: 11.0.4
         version: 11.0.4
       '@types/node':
-        specifier: ^22.15.24
+        specifier: 22.15.24
         version: 22.15.24
       esbuild:
-        specifier: ^0.25.5
+        specifier: 0.25.5
         version: 0.25.5
       kysely:
-        specifier: ^0.27.5
+        specifier: 0.27.6
         version: 0.27.6
       kysely-codegen:
-        specifier: ^0.18.5
+        specifier: 0.18.5
         version: 0.18.5(kysely@0.27.6)(typescript@5.8.3)
       typescript:
-        specifier: ^5.8.3
+        specifier: 5.8.3
         version: 5.8.3
       unenv:
-        specifier: ^1.10.0
+        specifier: 1.10.0
         version: 1.10.0
 
 packages:
