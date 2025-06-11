@@ -61,15 +61,14 @@ const getInjectContent = (globalName, globalInject) => {
   return `import { ${exportName} } from "${moduleSpecifier}"; globalThis.${globalName} = ${exportName};`;
 };
 
-// Due to the use of dynamic require, bundling `git-diff` is difficult.
-// However, since it's not used in this use case, we can mock it instead.
-const mockGitDiff = {
-  name: "mock-git-diff",
+// Mock packages that are difficult to bundle and not used in the current use case.
+const mockPackages = {
+  name: "mock-packages",
   setup(build) {
-    build.onResolve({ filter: /^git-diff$/ }, (args) => {
-      return { path: args.path, namespace: "git-diff" };
+    build.onResolve({ filter: /^(git-diff|cosmiconfig)$/ }, (args) => {
+      return { path: args.path, namespace: "mock-packages" };
     });
-    build.onLoad({ filter: /.*/, namespace: "git-diff" }, () => {
+    build.onLoad({ filter: /.*/, namespace: "mock-packages" }, () => {
       return { contents: "export default null" };
     });
   },
@@ -84,7 +83,7 @@ build({
   define: {
     global: "globalThis",
   },
-  plugins: [unenvAlias, unenvInject, mockGitDiff],
+  plugins: [unenvAlias, unenvInject, mockPackages],
   // Unused drivers are left unbundled as-is.
   // Note that future updates to `kysely-codegen` may introduce new drivers.
   external: [
