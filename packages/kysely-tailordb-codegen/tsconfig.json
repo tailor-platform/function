@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    // Since we're using esbuild, TypeScript is configured as more of a type checker.
+    // refs: https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options.html#im-using-a-bundler
+    "target": "ESNext",
+    "module": "Preserve",
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "allowArbitraryExtensions": true,
+    "verbatimModuleSyntax": true,
+    "types": ["@tailor-platform/function-types"]
+  }
+}
