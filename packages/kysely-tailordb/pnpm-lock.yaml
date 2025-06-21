@@ -15,8 +15,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0
       '@tsconfig/recommended':
-        specifier: 1.0.8
-        version: 1.0.8
+        specifier: 1.0.10
+        version: 1.0.10
       kysely:
         specifier: 0.28.1
         version: 0.28.1
@@ -356,8 +356,8 @@ packages:
   '@tailor-platform/function-types@0.2.0':
     resolution: {integrity: sha512-MryN5diFLKiij6snsHhbFWDKvXHibGEXqxT8m6Ar0T6IRQIaQu77IEwOU9bTf3dO0IE+tIGaXw4NbjIREDHbKg==}
 
-  '@tsconfig/recommended@1.0.8':
-    resolution: {integrity: sha512-TotjFaaXveVUdsrXCdalyF6E5RyG6+7hHHQVZonQtdlk1rJZ1myDIvPUUKPhoYv+JAzThb2lQJh9+9ZfF46hsA==}
+  '@tsconfig/recommended@1.0.10':
+    resolution: {integrity: sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -904,7 +904,7 @@ snapshots:
 
   '@tailor-platform/function-types@0.2.0': {}
 
-  '@tsconfig/recommended@1.0.8': {}
+  '@tsconfig/recommended@1.0.10': {}
 
   '@types/estree@1.0.6': {}
 
