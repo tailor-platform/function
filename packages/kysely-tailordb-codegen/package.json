@@ -27,7 +27,7 @@
     "@tailor-platform/function-kysely-tailordb": "0.1.2",
     "@tailor-platform/function-types": "0.2.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "22.15.24",
+    "@types/node": "22.15.32",
     "esbuild": "0.25.5",
     "kysely": "0.27.6",
     "kysely-codegen": "0.18.5",
