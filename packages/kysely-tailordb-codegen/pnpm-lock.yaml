@@ -22,8 +22,8 @@ importers:
         specifier: 0.1.2
         version: 0.1.2(kysely@0.27.6)
       '@tailor-platform/function-types':
-        specifier: 0.2.0
-        version: 0.2.0
+        specifier: 0.3.0
+        version: 0.3.0
       '@types/fs-extra':
         specifier: 11.0.4
         version: 11.0.4
@@ -265,8 +265,8 @@ packages:
     peerDependencies:
       kysely: '>= 0.24.0 < 1'
 
-  '@tailor-platform/function-types@0.2.0':
-    resolution: {integrity: sha512-MryN5diFLKiij6snsHhbFWDKvXHibGEXqxT8m6Ar0T6IRQIaQu77IEwOU9bTf3dO0IE+tIGaXw4NbjIREDHbKg==}
+  '@tailor-platform/function-types@0.3.0':
+    resolution: {integrity: sha512-1EDfA36FLiFUpZmb3U61Baukn9ykvjDCgf1W7Met72l6VA5mdgsZ5tGe8XpcPXfwVcknv7NZijYA4mGNQYe/6Q==}
 
   '@types/fs-extra@11.0.4':
     resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
@@ -720,7 +720,7 @@ snapshots:
     dependencies:
       kysely: 0.27.6
 
-  '@tailor-platform/function-types@0.2.0': {}
+  '@tailor-platform/function-types@0.3.0': {}
 
   '@types/fs-extra@11.0.4':
     dependencies:
