@@ -18,9 +18,6 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
-      '@tailor-platform/function-kysely-tailordb':
-        specifier: 0.1.2
-        version: 0.1.2(kysely@0.27.6)
       '@tailor-platform/function-types':
         specifier: 0.3.0
         version: 0.3.0
@@ -34,11 +31,11 @@ importers:
         specifier: 0.25.5
         version: 0.25.5
       kysely:
-        specifier: 0.27.6
-        version: 0.27.6
+        specifier: 0.28.2
+        version: 0.28.2
       kysely-codegen:
         specifier: 0.18.5
-        version: 0.18.5(kysely@0.27.6)(typescript@5.8.3)
+        version: 0.18.5(kysely@0.28.2)(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -259,12 +256,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tailor-platform/function-kysely-tailordb@0.1.2':
-    resolution: {integrity: sha512-JI5y4hH1eNBxrkrORKlWTT6SO2+mt28vQpDE6SmjuGz2RUAVvbOMuoLf/mpHmgwExnV0vzAoeddrrZHrma+ykQ==}
-    engines: {node: 22.x}
-    peerDependencies:
-      kysely: '>= 0.24.0 < 1'
-
   '@tailor-platform/function-types@0.3.0':
     resolution: {integrity: sha512-1EDfA36FLiFUpZmb3U61Baukn9ykvjDCgf1W7Met72l6VA5mdgsZ5tGe8XpcPXfwVcknv7NZijYA4mGNQYe/6Q==}
 
@@ -291,8 +282,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  brace-expansion@1.1.11:
-    resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
+  brace-expansion@1.1.12:
+    resolution: {integrity: sha512-9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -354,8 +345,8 @@ packages:
     resolution: {integrity: sha512-lXpXz2ZE1cea1gL4sz2Ipj8y4PiVjytYr3Ij0SWoms1PGxIv7m2CRKuRuCRtHdVuvM/hNJPMxt5PbhboNC4dPQ==}
     engines: {node: '>=12'}
 
-  dotenv@16.5.0:
-    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+  dotenv@16.6.1:
+    resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
     engines: {node: '>=12'}
 
   env-paths@2.2.1:
@@ -475,9 +466,9 @@ packages:
       tedious:
         optional: true
 
-  kysely@0.27.6:
-    resolution: {integrity: sha512-FIyV/64EkKhJmjgC0g2hygpBv5RNWVPyNCqSAD7eTCv6eFWNIi4PN1UvdSJGicN/o35bnevgis4Y0UDC0qi8jQ==}
-    engines: {node: '>=14.0.0'}
+  kysely@0.28.2:
+    resolution: {integrity: sha512-4YAVLoF0Sf0UTqlhgQMFU9iQECdah7n+13ANkiuVfRvlK+uI0Etbgd7bVP36dKlG+NXWbhGua8vnGt+sdhvT7A==}
+    engines: {node: '>=18.0.0'}
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -588,8 +579,8 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  zod@3.25.36:
-    resolution: {integrity: sha512-eRFS3i8T0IrpGdL8HQyqFAugGOn7jOjyGgGdtv5NY4Wkhi7lJDk732bNZ609YMIGFbLoaj6J69O1Mura23gfIw==}
+  zod@3.25.67:
+    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
 
   zx@8.6.0:
     resolution: {integrity: sha512-CpOskNj7nNW19z5DkOTHX24Yh1qnnx1oANn8EnD3QbCUBnZpuennJaYkb4zea5GJCxT6/IdxeiA5nweQ1S2YtA==}
@@ -716,10 +707,6 @@ snapshots:
   '@esbuild/win32-x64@0.25.5':
     optional: true
 
-  '@tailor-platform/function-kysely-tailordb@0.1.2(kysely@0.27.6)':
-    dependencies:
-      kysely: 0.27.6
-
   '@tailor-platform/function-types@0.3.0': {}
 
   '@types/fs-extra@11.0.4':
@@ -747,7 +734,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  brace-expansion@1.1.11:
+  brace-expansion@1.1.12:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
@@ -802,9 +789,9 @@ snapshots:
 
   dotenv-expand@12.0.2:
     dependencies:
-      dotenv: 16.5.0
+      dotenv: 16.6.1
 
-  dotenv@16.5.0: {}
+  dotenv@16.6.1: {}
 
   env-paths@2.2.1: {}
 
@@ -905,22 +892,22 @@ snapshots:
 
   json-parse-even-better-errors@2.3.1: {}
 
-  kysely-codegen@0.18.5(kysely@0.27.6)(typescript@5.8.3):
+  kysely-codegen@0.18.5(kysely@0.28.2)(typescript@5.8.3):
     dependencies:
       chalk: 4.1.2
       cosmiconfig: 9.0.0(typescript@5.8.3)
-      dotenv: 16.5.0
+      dotenv: 16.6.1
       dotenv-expand: 12.0.2
       git-diff: 2.0.6
-      kysely: 0.27.6
+      kysely: 0.28.2
       micromatch: 4.0.8
       minimist: 1.2.8
       pluralize: 8.0.0
-      zod: 3.25.36
+      zod: 3.25.67
     transitivePeerDependencies:
       - typescript
 
-  kysely@0.27.6: {}
+  kysely@0.28.2: {}
 
   lines-and-columns@1.2.4: {}
 
@@ -935,7 +922,7 @@ snapshots:
 
   minimatch@3.1.2:
     dependencies:
-      brace-expansion: 1.1.11
+      brace-expansion: 1.1.12
 
   minimist@1.2.8: {}
 
@@ -1016,6 +1003,6 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  zod@3.25.36: {}
+  zod@3.25.67: {}
 
   zx@8.6.0: {}
