@@ -9,5 +9,5 @@
   },
   "types": "./tailor.d.ts",
   "author": "",
-  "packageManager": "pnpm@10.12.3"
+  "packageManager": "pnpm@10.12.4"
 }
