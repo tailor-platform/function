@@ -1,6 +1,6 @@
 {
   "name": "@tailor-platform/function-kysely-tailordb-codegen",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generate Kysely code for TailorDB",
   "repository": {
     "type": "git",
