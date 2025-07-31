@@ -57,22 +57,36 @@ declare namespace tailor.iconv {
   /**
    * Convert string from one encoding to another
    */
-  function convert(str: string | Uint8Array | ArrayBuffer, fromEncoding: string, toEncoding: string): string | Uint8Array;
+  function convert<T extends string>(
+    str: string | Uint8Array | ArrayBuffer,
+    fromEncoding: string,
+    toEncoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
 
   /**
    * Convert buffer from one encoding to another
    */
-  function convertBuffer(buffer: Uint8Array | ArrayBuffer, fromEncoding: string, toEncoding: string): string | Uint8Array;
+  function convertBuffer<T extends string>(
+    buffer: Uint8Array | ArrayBuffer,
+    fromEncoding: string,
+    toEncoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
 
   /**
    * Decode buffer to string
    */
-  function decode(buffer: Uint8Array | ArrayBuffer, encoding: string): string;
+  function decode<T extends string>(
+    buffer: Uint8Array | ArrayBuffer,
+    encoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
 
   /**
    * Encode string to buffer
    */
-  function encode(str: string, encoding: string): Uint8Array;
+  function encode<T extends string>(
+    str: string,
+    encoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
 
   /**
    * Get list of supported encodings
