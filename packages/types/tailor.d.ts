@@ -52,3 +52,52 @@ declare namespace tailor.secretmanager {
     name: string
   ): Promise<string | undefined>;
 }
+
+declare namespace tailor.iconv {
+  /**
+   * Convert string from one encoding to another
+   */
+  function convert<T extends string>(
+    str: string | Uint8Array | ArrayBuffer,
+    fromEncoding: string,
+    toEncoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
+
+  /**
+   * Convert buffer from one encoding to another
+   */
+  function convertBuffer<T extends string>(
+    buffer: Uint8Array | ArrayBuffer,
+    fromEncoding: string,
+    toEncoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
+
+  /**
+   * Decode buffer to string
+   */
+  function decode<T extends string>(
+    buffer: Uint8Array | ArrayBuffer,
+    encoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
+
+  /**
+   * Encode string to buffer
+   */
+  function encode<T extends string>(
+    str: string,
+    encoding: T
+  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
+
+  /**
+   * Get list of supported encodings
+   */
+  function encodings(): string[];
+
+  /**
+   * Iconv class for compatibility with node-iconv
+   */
+  class Iconv {
+    constructor(fromEncoding: string, toEncoding: string);
+    convert(input: string | Uint8Array | ArrayBuffer): string | Uint8Array;
+  }
+}
