@@ -31,7 +31,7 @@
     "@tsconfig/recommended": "1.0.10",
     "kysely": "0.28.1",
     "tsup": "8.5.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "peerDependencies": {
     "kysely": ">= 0.24.0 < 1"
