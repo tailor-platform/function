@@ -24,7 +24,7 @@
   },
   "types": "./dist/index.d.ts",
   "files": ["dist"],
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@tailor-platform/function-types": "0.3.0",
