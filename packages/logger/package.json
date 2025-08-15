@@ -1,6 +1,6 @@
 {
   "name": "@tailor-platform/function-logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple logger utility for Tailor applications",
   "repository": {
     "type": "git",
@@ -8,8 +8,15 @@
     "directory": "packages/logger"
   },
   "module": "dist/index.js",
+  "main": "./dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist"
