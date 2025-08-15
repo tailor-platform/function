@@ -77,8 +77,8 @@ declare namespace tailor.iconv {
    */
   function decode<T extends string>(
     buffer: Uint8Array | ArrayBuffer,
-    encoding: T
-  ): T extends 'UTF8' | 'UTF-8' ? string : Uint8Array;
+    encoding: string
+  ): string;
 
   /**
    * Encode string to buffer
