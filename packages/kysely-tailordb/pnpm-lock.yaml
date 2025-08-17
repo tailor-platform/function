@@ -12,8 +12,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@tailor-platform/function-types':
-        specifier: 0.3.0
-        version: 0.3.0
+        specifier: 0.4.0
+        version: 0.4.0
       '@tsconfig/recommended':
         specifier: 1.0.10
         version: 1.0.10
@@ -353,8 +353,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tailor-platform/function-types@0.3.0':
-    resolution: {integrity: sha512-1EDfA36FLiFUpZmb3U61Baukn9ykvjDCgf1W7Met72l6VA5mdgsZ5tGe8XpcPXfwVcknv7NZijYA4mGNQYe/6Q==}
+  '@tailor-platform/function-types@0.4.0':
+    resolution: {integrity: sha512-K7D3Mx+vvzw/wxcRFhnBwpN6t1tyV60LkSbQYNkBx9NJRy8NN/h/4ghmFOj4eLkSQ/dwuEqzf+n8F3iAyE9Mkw==}
 
   '@tsconfig/recommended@1.0.10':
     resolution: {integrity: sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==}
@@ -903,7 +903,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.34.8':
     optional: true
 
-  '@tailor-platform/function-types@0.3.0': {}
+  '@tailor-platform/function-types@0.4.0': {}
 
   '@tsconfig/recommended@1.0.10': {}
 
