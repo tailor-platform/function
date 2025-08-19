@@ -31,11 +31,11 @@ importers:
         specifier: 0.25.8
         version: 0.25.8
       kysely:
-        specifier: 0.28.2
-        version: 0.28.2
+        specifier: 0.28.5
+        version: 0.28.5
       kysely-codegen:
         specifier: 0.18.5
-        version: 0.18.5(kysely@0.28.2)(typescript@5.9.2)
+        version: 0.18.5(kysely@0.28.5)(typescript@5.9.2)
       typescript:
         specifier: 5.9.2
         version: 5.9.2
@@ -472,9 +472,9 @@ packages:
       tedious:
         optional: true
 
-  kysely@0.28.2:
-    resolution: {integrity: sha512-4YAVLoF0Sf0UTqlhgQMFU9iQECdah7n+13ANkiuVfRvlK+uI0Etbgd7bVP36dKlG+NXWbhGua8vnGt+sdhvT7A==}
-    engines: {node: '>=18.0.0'}
+  kysely@0.28.5:
+    resolution: {integrity: sha512-rlB0I/c6FBDWPcQoDtkxi9zIvpmnV5xoIalfCMSMCa7nuA6VGA3F54TW9mEgX4DVf10sXAWCF5fDbamI/5ZpKA==}
+    engines: {node: '>=20.0.0'}
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -902,14 +902,14 @@ snapshots:
 
   json-parse-even-better-errors@2.3.1: {}
 
-  kysely-codegen@0.18.5(kysely@0.28.2)(typescript@5.9.2):
+  kysely-codegen@0.18.5(kysely@0.28.5)(typescript@5.9.2):
     dependencies:
       chalk: 4.1.2
       cosmiconfig: 9.0.0(typescript@5.9.2)
       dotenv: 16.6.1
       dotenv-expand: 12.0.2
       git-diff: 2.0.6
-      kysely: 0.28.2
+      kysely: 0.28.5
       micromatch: 4.0.8
       minimist: 1.2.8
       pluralize: 8.0.0
@@ -917,7 +917,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  kysely@0.28.2: {}
+  kysely@0.28.5: {}
 
   lines-and-columns@1.2.4: {}
 
