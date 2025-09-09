@@ -19,8 +19,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@tailor-platform/function-types':
-        specifier: 0.3.0
-        version: 0.3.0
+        specifier: 0.4.0
+        version: 0.4.0
       '@types/fs-extra':
         specifier: 11.0.4
         version: 11.0.4
@@ -262,8 +262,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tailor-platform/function-types@0.3.0':
-    resolution: {integrity: sha512-1EDfA36FLiFUpZmb3U61Baukn9ykvjDCgf1W7Met72l6VA5mdgsZ5tGe8XpcPXfwVcknv7NZijYA4mGNQYe/6Q==}
+  '@tailor-platform/function-types@0.4.0':
+    resolution: {integrity: sha512-K7D3Mx+vvzw/wxcRFhnBwpN6t1tyV60LkSbQYNkBx9NJRy8NN/h/4ghmFOj4eLkSQ/dwuEqzf+n8F3iAyE9Mkw==}
 
   '@types/fs-extra@11.0.4':
     resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
@@ -716,7 +716,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.8':
     optional: true
 
-  '@tailor-platform/function-types@0.3.0': {}
+  '@tailor-platform/function-types@0.4.0': {}
 
   '@types/fs-extra@11.0.4':
     dependencies:
