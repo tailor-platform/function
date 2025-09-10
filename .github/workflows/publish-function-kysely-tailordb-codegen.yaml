@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 defaults:
   run:
@@ -21,8 +22,9 @@ jobs:
           node-version-file: packages/kysely-tailordb-codegen/package.json
           registry-url: https://registry.npmjs.org
 
-      - name: Update corepack
+      - name: Update npm and corepack
         run: |
+          npm i -g npm@latest
           npm i -g corepack@latest
 
       - name: Publish
@@ -32,5 +34,3 @@ jobs:
           pnpm install
           pnpm run build
           pnpm publish --no-git-checks --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
