@@ -53,6 +53,13 @@ declare namespace tailor.secretmanager {
   ): Promise<string | undefined>;
 }
 
+declare namespace tailor.authconnection {
+  /**
+   * getConnectionToken returns the access token for an auth connection
+   */
+  function getConnectionToken(connectionName: string): Promise<any>;
+}
+
 declare namespace tailor.iconv {
   /**
    * Convert string from one encoding to another
