@@ -26,7 +26,7 @@
     "@biomejs/biome": "1.9.4",
     "@tailor-platform/function-types": "0.4.0",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "22.18.3",
+    "@types/node": "22.18.4",
     "esbuild": "0.25.9",
     "kysely": "0.28.2",
     "kysely-codegen": "0.18.5",
