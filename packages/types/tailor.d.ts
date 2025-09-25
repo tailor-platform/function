@@ -26,8 +26,99 @@ declare namespace Tailordb {
     | "CREATE";
 }
 
+/**
+ * File stream iterator for TailorDB file downloads
+ */
+interface TailordbFileStreamIterator {
+  /**
+   * Get next chunk from the stream
+   */
+  next(): Promise<{ done: boolean; value?: any }>;
+
+  /**
+   * Close the stream session
+   */
+  close(): Promise<void>;
+
+  /**
+   * AsyncIterator symbol for for-await-of loops
+   */
+  [Symbol.asyncIterator](): TailordbFileStreamIterator;
+}
+
 declare const tailordb: {
   Client: typeof Tailordb.Client;
+    file: {
+        /**
+         * Upload file to TailorDB
+         */
+        upload(
+            namespace: string,
+            typeName: string,
+            fieldName: string,
+            recordId: string,
+            data: string | ArrayBuffer | Uint8Array | number[],
+            options?: {
+                contentType?: string;
+            }
+        ): Promise<{
+            metadata: {
+                fileSize: number;
+                sha256sum: string;
+            }
+        }>;
+
+        /**
+         * Download file from TailorDB
+         */
+        download(
+            namespace: string,
+            typeName: string,
+            fieldName: string,
+            recordId: string
+        ): Promise<{
+            data: Uint8Array;
+            metadata: {
+                contentType: string;
+                fileSize: number;
+            }
+        }>;
+
+        /**
+         * Open download stream for large files
+         */
+        openDownloadStream(
+            namespace: string,
+            typeName: string,
+            fieldName: string,
+            recordId: string
+        ): Promise<TailordbFileStreamIterator>;
+
+        /**
+         * Delete file from TailorDB
+         */
+        delete(
+            namespace: string,
+            typeName: string,
+            fieldName: string,
+            recordId: string
+        ): Promise<boolean>;
+
+        /**
+         * Get file metadata from TailorDB
+         */
+        getMetadata(
+            namespace: string,
+            typeName: string,
+            fieldName: string,
+            recordId: string
+        ): Promise<{
+            contentType: string;
+            fileSize: number;
+            sha256sum: string;
+            lastUploadedAt: string;
+        }>;
+    };
 };
 
 declare namespace tailor.secretmanager {
