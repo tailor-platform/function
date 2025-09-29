@@ -184,8 +184,7 @@ interface FileDownloadResponse {
 type StreamValue =
   | { type: 'metadata'; metadata: StreamMetadata }
   | { type: 'chunk'; data: Uint8Array; position: number }
-  | { type: 'complete' }
-  | { type: 'error'; error: string };
+  | { type: 'complete' };
 
 /**
  * Stream iterator interface
