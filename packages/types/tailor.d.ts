@@ -28,6 +28,7 @@ declare namespace Tailordb {
 
 declare const tailordb: {
   Client: typeof Tailordb.Client;
+  file: TailorDBFileAPI;
 };
 
 declare namespace tailor.secretmanager {
@@ -107,4 +108,146 @@ declare namespace tailor.iconv {
     constructor(fromEncoding: string, toEncoding: string);
     convert(input: string | Uint8Array | ArrayBuffer): string | Uint8Array;
   }
+}
+
+// TailorDB File Extension Types
+
+/**
+ * Custom error class for TailorDB File operations
+ */
+declare class TailorDBFileError extends Error {
+  name: 'TailorDBFileError';
+  code?: 'INVALID_PARAMS' | 'INVALID_DATA_TYPE' | 'OPERATION_FAILED' | 'DELETE_FAILED' | 'STREAM_OPEN_FAILED' | 'STREAM_READ_ERROR' | 'STREAM_ERROR';
+  cause?: unknown;
+}
+
+/**
+ * Upload response metadata
+ */
+interface UploadMetadata {
+  fileSize: number;
+  sha256sum: string;
+}
+
+/**
+ * Download response metadata
+ */
+interface DownloadMetadata {
+  contentType: string;
+  fileSize: number;
+}
+
+/**
+ * File metadata (for getMetadata API)
+ */
+interface FileMetadata {
+  contentType: string;
+  fileSize: number;
+  sha256sum: string;
+  lastUploadedAt?: string;
+}
+
+/**
+ * Stream metadata (first chunk)
+ */
+interface StreamMetadata {
+  contentType: string;
+  fileSize: number;
+  sha256sum: string;
+}
+
+/**
+ * Upload options interface
+ */
+interface FileUploadOptions {
+  contentType?: string;
+}
+
+/**
+ * Upload response interface
+ */
+interface FileUploadResponse {
+  metadata: UploadMetadata;
+}
+
+/**
+ * Download response interface
+ */
+interface FileDownloadResponse {
+  data: Uint8Array;
+  metadata: DownloadMetadata;
+}
+
+/**
+ * Stream chunk types
+ */
+type StreamValue =
+  | { type: 'metadata'; metadata: StreamMetadata }
+  | { type: 'chunk'; data: Uint8Array; position: number }
+  | { type: 'complete' }
+  | { type: 'error'; error: string };
+
+/**
+ * Stream iterator interface
+ */
+interface FileStreamIterator extends AsyncIterableIterator<StreamValue> {
+  next(): Promise<IteratorResult<StreamValue>>;
+  close(): Promise<void>;
+}
+
+/**
+ * TailorDB File API
+ */
+interface TailorDBFileAPI {
+  /**
+   * Upload a file to TailorDB
+   */
+  upload(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string,
+    data: string | ArrayBuffer | Uint8Array | number[],
+    options?: FileUploadOptions
+  ): Promise<FileUploadResponse>;
+
+  /**
+   * Download a file from TailorDB
+   */
+  download(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string
+  ): Promise<FileDownloadResponse>;
+
+  /**
+   * Delete a file from TailorDB
+   */
+  delete(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string
+  ): Promise<void>;
+
+  /**
+   * Get file metadata from TailorDB
+   */
+  getMetadata(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string
+  ): Promise<FileMetadata>;
+
+  /**
+   * Open a download stream for large files
+   */
+  openDownloadStream(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string
+  ): Promise<FileStreamIterator>;
 }
