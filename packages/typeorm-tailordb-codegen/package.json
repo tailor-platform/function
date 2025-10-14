@@ -43,6 +43,9 @@
     "onlyBuiltDependencies": [
       "@biomejs/biome",
       "esbuild"
-    ]
+    ],
+    "overrides": {
+      "@tailor-platform/function-typeorm-tailordb-codegen": "link:"
+    }
   }
 }

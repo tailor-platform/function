@@ -57,6 +57,7 @@ function tsTypeFromPg(type: string): string {
 
 function typeormColumnTypeFromPg(type: string): string {
   // Pass-through Postgres type names normally work for TypeORM Postgres driver
+  if (type=='_text') return 'text';
   return type;
 }
 
@@ -89,7 +90,7 @@ function renderEntities(tables: ReturnType<typeof groupByTable>): string {
       if (comment) {
         lines.push(`  /** ${comment} */`);
       }
-      lines.push(`  ${c.column}: ${tsType};`);
+      lines.push(`  ${c.column}!: ${tsType};`);
       lines.push("");
     }
     lines.push("}");

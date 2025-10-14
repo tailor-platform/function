@@ -5,8 +5,13 @@ Generate TypeORM entity code for TailorDB
 ## Usage
 
 ```sh
+# npm
 npm install -D @tailor-platform/function-typeorm-tailordb-codegen
 npx typeorm-tailordb-codegen -h
+
+# pnpm
+pnpm add -D @tailor-platform/function-typeorm-tailordb-codegen
+pnpm exec typeorm-tailordb-codegen -h
 ```
 
 ```
