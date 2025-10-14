@@ -1,0 +1,48 @@
+{
+  "name": "@tailor-platform/function-typeorm-tailordb-codegen",
+  "version": "0.1.0",
+  "description": "Generate TypeORM code for TailorDB",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tailor-platform/function",
+    "directory": "packages/typeorm-tailordb-codegen"
+  },
+  "type": "module",
+  "bin": {
+    "typeorm-tailordb-codegen": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node ./build.js",
+    "check": "biome check .",
+    "check-write": "biome check --write .",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@tailor-platform/function-typeorm-tailordb-codegen": "link:",
+    "commander": "^14.0.0",
+    "zx": "^8.5.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@tailor-platform/function-types": "0.4.0",
+    "@types/fs-extra": "11.0.4",
+    "@types/node": "22.18.1",
+    "esbuild": "0.25.9",
+    "fs-extra": "11.2.0",
+    "typescript": "5.9.2",
+    "unenv": "1.10.0"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild"
+    ]
+  }
+}
