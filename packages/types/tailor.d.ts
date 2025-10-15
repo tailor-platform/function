@@ -144,6 +144,7 @@ interface FileMetadata {
   contentType: string;
   fileSize: number;
   sha256sum: string;
+  url: string;
   lastUploadedAt?: string;
 }
 
