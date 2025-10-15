@@ -120,7 +120,9 @@ export class TailordbQueryRunnerPrototype {
 
   async query(query: string, parameters?: unknown[], useStructuredResult?: boolean): Promise<any> {
     query = query.replace(/COUNT\(1\)/, 'COUNT(*)'); // TailorDB does not support multiple statements per query
-    console.log(`[tailordb] query: ${query} -- params: ${JSON.stringify(parameters)}`);
+    if (this.connection?.options?.logging) {
+      console.log(`[tailordb] query: ${query} -- params: ${JSON.stringify(parameters)}`);
+    }
     const res = await this.client.queryObject<any>(query, parameters ?? []);
     const rows = (res as any)?.rows ?? [];
     const rowCount = (res as any)?.rowCount ?? rows.length ?? 0;
@@ -269,7 +271,7 @@ export class TailordbDriverPrototype {
 /**
  * Factory that patches DriverFactory (browser build) and returns a configured DataSource.
  */
-export function createDatasource(namespace: string, entities?: MixedList<Function | string | EntitySchema>): DataSource {
+export function createDatasource(config: {namespace: string, entities?: MixedList<Function | string | EntitySchema>, logging?: boolean}): DataSource {
   const Factory: any = DriverFactory as any;
   if (Factory.__tailordb_patched) {
     throw Error('Tailordb driver already registered');
@@ -287,9 +289,9 @@ export function createDatasource(namespace: string, entities?: MixedList<Functio
   Factory.__tailordb_patched = true;
   return new DataSource({
     type: 'tailordb' as any,
-    tailordb: { namespace },
-    entities: entities,
+    tailordb: { namespace: config.namespace },
+    entities: config.entities,
     synchronize: false,
-    logging: true,
+    logging: config.logging,
   } as any);
 }
