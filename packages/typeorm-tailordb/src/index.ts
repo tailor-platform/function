@@ -119,6 +119,8 @@ export class TailordbQueryRunnerPrototype {
   }
 
   async query(query: string, parameters?: unknown[], useStructuredResult?: boolean): Promise<any> {
+    query = query.replace(/COUNT\(1\)/, 'COUNT(*)'); // TailorDB does not support multiple statements per query
+    console.log(`[tailordb] query: ${query} -- params: ${JSON.stringify(parameters)}`);
     const res = await this.client.queryObject<any>(query, parameters ?? []);
     const rows = (res as any)?.rows ?? [];
     const rowCount = (res as any)?.rowCount ?? rows.length ?? 0;
