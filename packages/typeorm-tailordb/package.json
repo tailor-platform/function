@@ -35,7 +35,7 @@
     "@tailor-platform/function-types": "0.6.0",
     "@tsconfig/recommended": "1.0.10",
     "tsup": "8.5.0",
-    "typeorm": "^0.3.20",
+    "typeorm": "0.3.27",
     "typescript": "5.9.2"
   },
   "peerDependencies": {
