@@ -1,3 +1,5 @@
+> This is not an experimental package. but it is ready for production use.
+
 # @tailor-platform/function-kysely-tailordb
 
 [Kysely](https://github.com/kysely-org/kysely) dialect for TailorDB
