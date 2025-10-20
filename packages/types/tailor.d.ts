@@ -251,3 +251,22 @@ interface TailorDBFileAPI {
     recordId: string
   ): Promise<FileStreamIterator>;
 }
+
+declare namespace tailor.workflow {
+    interface AuthInvoker {
+        namespace: string;
+        machineUserName: string;
+    }
+
+    interface TriggerWorkflowOptions {
+        authInvoker?: AuthInvoker;
+    }
+
+    function triggerJobFunction(job_name: string, args?: any): any;
+
+    function triggerWorkflow(
+        workflow_name: string,
+        args?: any,
+        options?: TriggerWorkflowOptions
+    ): Promise<string>;
+}
