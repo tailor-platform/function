@@ -77,10 +77,6 @@ importers:
         version: 5.9.3
 
   packages/typeorm-tailordb:
-    dependencies:
-      '@tailor-platform/function-typeorm-tailordb':
-        specifier: 'link:'
-        version: 'link:'
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -103,9 +99,6 @@ importers:
 
   packages/typeorm-tailordb-codegen:
     dependencies:
-      '@tailor-platform/function-typeorm-tailordb-codegen':
-        specifier: 'link:'
-        version: 'link:'
       commander:
         specifier: ^14.0.0
         version: 14.0.1

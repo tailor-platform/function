@@ -21,7 +21,6 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@tailor-platform/function-typeorm-tailordb-codegen": "link:",
     "commander": "^14.0.0",
     "zx": "^8.5.4"
   },
@@ -34,10 +33,5 @@
     "fs-extra": "11.2.0",
     "typescript": "5.9.2",
     "unenv": "1.10.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@tailor-platform/function-typeorm-tailordb-codegen": "link:"
-    }
   }
 }
