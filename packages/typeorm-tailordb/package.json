@@ -1,45 +1,42 @@
 {
-  "name": "@tailor-platform/function-typeorm-tailordb",
-  "version": "0.1.0",
-  "type": "module",
-  "description": "TypeORM helpers for TailorDB",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tailor-platform/function",
-    "directory": "packages/typeorm-tailordb"
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "scripts": {
-    "check": "biome check .",
-    "check-write": "biome check --write .",
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
-    "clean": "rm -rf dist",
-    "type-check": "tsc --noEmit",
-    "prepublishOnly": "pnpm run build"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "sideEffects": false,
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "CHANGELOG.md"
-  ],
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@tailor-platform/function-types": "workspace:*",
-    "@tsconfig/recommended": "1.0.10",
-    "tsup": "8.5.0",
-    "typeorm": "^0.3.20",
-    "typescript": "5.9.2"
-  },
-  "peerDependencies": {
-    "typeorm": ">=0.3 <1"
-  }
+	"name": "@tailor-platform/function-typeorm-tailordb",
+	"version": "0.1.0",
+	"type": "module",
+	"description": "TypeORM helpers for TailorDB",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tailor-platform/function",
+		"directory": "packages/typeorm-tailordb"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"scripts": {
+		"check": "biome check .",
+		"check-write": "biome check --write .",
+		"build": "tsup src/index.ts --format esm,cjs --dts --clean",
+		"clean": "rm -rf dist",
+		"type-check": "tsc --noEmit",
+		"prepublishOnly": "pnpm run build"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"sideEffects": false,
+	"types": "./dist/index.d.ts",
+	"files": ["dist", "CHANGELOG.md"],
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@tailor-platform/function-types": "workspace:*",
+		"@tsconfig/recommended": "1.0.10",
+		"tsup": "8.5.0",
+		"typeorm": "^0.3.20",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"typeorm": ">=0.3 <1"
+	}
 }
