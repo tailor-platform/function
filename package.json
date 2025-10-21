@@ -6,6 +6,7 @@
     "node": "22.x"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.7"
   }
 }
