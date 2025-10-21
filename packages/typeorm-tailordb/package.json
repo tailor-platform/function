@@ -32,7 +32,7 @@
   "packageManager": "pnpm@10.15.1",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@tailor-platform/function-types": "0.6.0",
+    "@tailor-platform/function-types": "0.6.1",
     "@tsconfig/recommended": "1.0.10",
     "tsup": "8.5.0",
     "typeorm": "^0.3.20",

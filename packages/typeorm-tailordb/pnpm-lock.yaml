@@ -19,8 +19,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@tailor-platform/function-types':
-        specifier: 0.6.0
-        version: 0.6.0
+        specifier: 0.6.1
+        version: 0.6.1
       '@tsconfig/recommended':
         specifier: 1.0.10
         version: 1.0.10
@@ -379,8 +379,8 @@ packages:
   '@sqltools/formatter@1.2.5':
     resolution: {integrity: sha512-Uy0+khmZqUrUGm5dmMqVlnvufZRSK0FbYzVgp0UMstm+F5+W2/jnEEQyc9vo1ZR/E5ZI/B1WjjoTqBqwJL6Krw==}
 
-  '@tailor-platform/function-types@0.6.0':
-    resolution: {integrity: sha512-v1HKKS9nZnzY+TQLKeors7riR8/6eDxEyhw3ktw1vJnxJdEqekem4xYJKhNcuAaoxHliTZWJjw4WrzggjPDIlQ==}
+  '@tailor-platform/function-types@0.6.1':
+    resolution: {integrity: sha512-eb9purcH26adc7yfViPmOjZQhc3lwEj+nR3AzBbWXgJtpetvsRnYk41ltyPqW8sRfbCaS5FJQSMpBv211osJBg==}
 
   '@tsconfig/recommended@1.0.10':
     resolution: {integrity: sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==}
@@ -1183,7 +1183,7 @@ snapshots:
 
   '@sqltools/formatter@1.2.5': {}
 
-  '@tailor-platform/function-types@0.6.0': {}
+  '@tailor-platform/function-types@0.6.1': {}
 
   '@tsconfig/recommended@1.0.10': {}
 
