@@ -8,5 +8,9 @@
     "directory": "packages/types"
   },
   "types": "./tailor.d.ts",
-  "author": ""
+  "author": "",
+  "files": [
+    "tailor.d.ts",
+    "CHANGELOG.md"
+  ]
 }

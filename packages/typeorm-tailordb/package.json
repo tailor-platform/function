@@ -27,7 +27,8 @@
   "sideEffects": false,
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
