@@ -19,7 +19,8 @@
     "build": "node ./build.js",
     "check": "biome check .",
     "check-write": "biome check --write .",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "commander": "^14.0.0",
