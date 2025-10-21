@@ -1,12 +1,15 @@
 {
   "name": "function",
   "private": true,
-  "packageManager": "pnpm@10.18.3",
-  "engines": {
-    "node": "22.x"
+  "scripts": {
+    "ci:publish": "pnpm publish -r --no-git-checks --access=public"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.7"
+  },
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": "22.x"
   }
 }

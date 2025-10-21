@@ -1,0 +1,41 @@
+name: Publish npm packages
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      id-token: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version-file: packages/kysely-tailordb/package.json
+          registry-url: https://registry.npmjs.org
+      
+      - name: Update npm and corepack
+        run: |
+          npm i -g npm@latest
+          npm i -g corepack@latest
+
+      - name: Install Deps
+        run: |
+          corepack enable
+          pnpm install
+
+      - name: Create and publish versions
+        id: changesets
+        uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba # v1.5.3
+        with:
+          publish: pnpm ci:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
