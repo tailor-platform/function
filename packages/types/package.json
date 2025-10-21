@@ -8,6 +8,5 @@
     "directory": "packages/types"
   },
   "types": "./tailor.d.ts",
-  "author": "",
-  "packageManager": "pnpm@10.18.0"
+  "author": ""
 }

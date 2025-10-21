@@ -41,14 +41,7 @@
   "peerDependencies": {
     "typeorm": ">=0.3 <1"
   },
-  "engines": {
-    "node": "22.x"
-  },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild"
-    ],
     "overrides": {
       "@tailor-platform/function-typeorm-tailordb": "link:"
     }

@@ -1,0 +1,11 @@
+{
+  "name": "function",
+  "private": true,
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7"
+  }
+}

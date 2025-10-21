@@ -35,15 +35,7 @@
     "typescript": "5.9.2",
     "unenv": "1.10.0"
   },
-  "engines": {
-    "node": "22.x"
-  },
-  "packageManager": "pnpm@10.15.1",
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild"
-    ],
     "overrides": {
       "@tailor-platform/function-typeorm-tailordb-codegen": "link:"
     }

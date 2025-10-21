@@ -11,7 +11,9 @@
   "bin": {
     "kysely-tailordb-codegen": "./dist/cli.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "node ./build.js",
     "check": "biome check .",
@@ -32,12 +34,5 @@
     "kysely-codegen": "0.18.5",
     "typescript": "5.9.3",
     "unenv": "1.10.0"
-  },
-  "engines": {
-    "node": "22.x"
-  },
-  "packageManager": "pnpm@10.18.0",
-  "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
   }
 }
