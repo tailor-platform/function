@@ -61,6 +61,14 @@ jobs:
     permissions:
       contents: read
 
+  types:
+    uses: ./.github/workflows/test-function-types.yaml
+    needs: path-filter
+    if: needs.path-filter.outputs.types == 'true'
+    permissions:
+      contents: read
+      pull-requests: write
+
   kysely-tailordb:
     uses: ./.github/workflows/test-function-kysely-tailordb.yaml
     needs: path-filter
