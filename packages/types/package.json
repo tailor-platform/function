@@ -9,5 +9,8 @@
   },
   "types": "./tailor.d.ts",
   "author": "",
-  "packageManager": "pnpm@10.18.0"
+  "files": [
+    "tailor.d.ts",
+    "CHANGELOG.md"
+  ]
 }

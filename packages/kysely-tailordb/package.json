@@ -15,7 +15,8 @@
     "check-write": "biome check --write .",
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
     "clean": "rm -rf dist",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
   },
   "exports": {
     "types": "./dist/index.d.ts",
@@ -23,11 +24,10 @@
     "require": "./dist/index.cjs"
   },
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
-  "packageManager": "pnpm@10.18.0",
+  "files": ["dist", "CHANGELOG.md"],
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@tailor-platform/function-types": "0.6.0",
+    "@tailor-platform/function-types": "workspace:*",
     "@tsconfig/recommended": "1.0.10",
     "kysely": "0.28.1",
     "tsup": "8.5.0",
@@ -35,11 +35,5 @@
   },
   "peerDependencies": {
     "kysely": ">= 0.24.0 < 1"
-  },
-  "engines": {
-    "node": "22.x"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
   }
 }
