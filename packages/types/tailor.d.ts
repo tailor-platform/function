@@ -2,7 +2,7 @@ declare namespace Tailordb {
   interface UserClientConfig {}
 
   interface DefaultClientConfig {
-    namespace?: string;
+    namespace: string;
   }
 
   type ClientConfig = UserClientConfig &
