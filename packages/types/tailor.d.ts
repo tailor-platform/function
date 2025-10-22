@@ -1,6 +1,6 @@
 declare namespace Tailordb {
   class Client {
-    constructor(config?: { namespace?: string });
+    constructor(config: { namespace: string });
     connect(): Promise<void>;
     end(): Promise<void>;
     queryObject<O>(
