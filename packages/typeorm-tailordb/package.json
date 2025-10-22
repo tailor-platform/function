@@ -1,6 +1,6 @@
 {
 	"name": "@tailor-platform/function-typeorm-tailordb",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"type": "module",
 	"description": "TypeORM helpers for TailorDB",
 	"repository": {
@@ -27,7 +27,10 @@
 	},
 	"sideEffects": false,
 	"types": "./dist/index.d.ts",
-	"files": ["dist", "CHANGELOG.md"],
+	"files": [
+		"dist",
+		"CHANGELOG.md"
+	],
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@tailor-platform/function-types": "workspace:*",

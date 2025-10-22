@@ -1,6 +1,6 @@
 {
   "name": "@tailor-platform/function-kysely-tailordb",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "description": "Kysely dialect for TailorDB",
   "repository": {
@@ -24,7 +24,10 @@
     "require": "./dist/index.cjs"
   },
   "types": "./dist/index.d.ts",
-  "files": ["dist", "CHANGELOG.md"],
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@tailor-platform/function-types": "workspace:*",

@@ -1,6 +1,6 @@
 {
 	"name": "@tailor-platform/function-typeorm-tailordb-codegen",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Generate TypeORM code for TailorDB",
 	"repository": {
 		"type": "git",
@@ -11,7 +11,10 @@
 	"bin": {
 		"typeorm-tailordb-codegen": "./dist/cli.js"
 	},
-	"files": ["dist", "CHANGELOG.md"],
+	"files": [
+		"dist",
+		"CHANGELOG.md"
+	],
 	"scripts": {
 		"build": "node ./build.js",
 		"check": "biome check .",
