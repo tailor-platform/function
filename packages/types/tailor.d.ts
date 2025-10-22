@@ -1,6 +1,15 @@
 declare namespace Tailordb {
+  interface UserClientConfig {}
+
+  interface DefaultClientConfig {
+    namespace?: string;
+  }
+
+  type ClientConfig = UserClientConfig &
+    Omit<DefaultClientConfig, keyof UserClientConfig>;
+
   class Client {
-    constructor(config?: { namespace?: string });
+    constructor(config: ClientConfig);
     connect(): Promise<void>;
     end(): Promise<void>;
     queryObject<O>(
