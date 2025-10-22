@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.7.2
+
+### Patch Changes
+
+- [#110](https://github.com/tailor-platform/function/pull/110) [`56b83a1`](https://github.com/tailor-platform/function/commit/56b83a1c2d0511374ddb61f625583799811fe5ed) Thanks [@toiroakr](https://github.com/toiroakr)! - fix: require Tailordb namespace
+
 ## 0.7.1
 
 ### Patch Changes
