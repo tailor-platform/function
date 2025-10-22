@@ -43,7 +43,7 @@ importers:
         version: 14.0.1
       zx:
         specifier: ^8.5.4
-        version: 8.8.4
+        version: 8.8.5
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -107,7 +107,7 @@ importers:
         version: 14.0.1
       zx:
         specifier: ^8.5.4
-        version: 8.8.4
+        version: 8.8.5
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -1887,8 +1887,8 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zx@8.8.4:
-    resolution: {integrity: sha512-44GcD+ZlM/v1OQtbwnSxLPcoE1ZEUICmR+RSbJZLAqfIixNLuMjLyh0DcS75OyfJ/sWYAwCWDmDvJ4hdnANAPQ==}
+  zx@8.8.5:
+    resolution: {integrity: sha512-SNgDF5L0gfN7FwVOdEFguY3orU5AkfFZm9B5YSHog/UDHv+lvmd82ZAsOenOkQixigwH2+yyH198AwNdKhj+RA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -3455,4 +3455,4 @@ snapshots:
 
   zod@3.25.76: {}
 
-  zx@8.8.4: {}
+  zx@8.8.5: {}
