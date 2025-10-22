@@ -253,20 +253,59 @@ interface TailorDBFileAPI {
 }
 
 declare namespace tailor.workflow {
+    /**
+     * Specifies the machine user that should be used to execute the workflow.
+     * This allows workflows to run with specific authentication context.
+     */
     interface AuthInvoker {
+        /** The namespace where the machine user is defined */
         namespace: string;
+        /** The name of the machine user to use for workflow execution */
         machineUserName: string;
     }
 
+    /**
+     * Options for triggering a workflow
+     */
     interface TriggerWorkflowOptions {
+        /** Optional authentication invoker to specify which machine user should execute the workflow */
         authInvoker?: AuthInvoker;
     }
 
-    function triggerJobFunction(job_name: string, args?: any): any;
-
+    /**
+     * Triggers a workflow and returns its execution ID.
+     *
+     * @param workflow_name - The name of the workflow to trigger
+     * @param args - Optional arguments to pass to the workflow
+     * @param options - Optional configuration including authentication settings
+     * @returns A Promise that resolves to the workflow execution ID (UUID format)
+     *
+     * @example
+     * ```typescript
+     * // Basic usage
+     * const executionId = await tailor.workflow.triggerWorkflow('myWorkflow', { data: 'value' });
+     *
+     * // With authentication invoker
+     * const executionId = await tailor.workflow.triggerWorkflow(
+     *   'myWorkflow',
+     *   { data: 'value' },
+     *   { authInvoker: { namespace: 'myNamespace', machineUserName: 'myUser' } }
+     * );
+     * ```
+     */
     function triggerWorkflow(
         workflow_name: string,
         args?: any,
         options?: TriggerWorkflowOptions
     ): Promise<string>;
+
+    /**
+     * Triggers a job function and returns its result.
+     *
+     * @param job_name - The name of the job function to trigger
+     * @param args - Optional arguments to pass to the job function
+     * @returns The result returned by the job function. The return type depends on the specific job function
+     implementation.
+     */
+    function triggerJobFunction(job_name: string, args?: any): any;
 }
