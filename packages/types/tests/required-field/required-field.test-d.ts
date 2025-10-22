@@ -3,7 +3,6 @@ import { assertType, describe, expectTypeOf, test } from "vitest";
 
 describe("ClientConfig with required UserClientConfig field", () => {
   test("should allow config with required field", () => {
-    assertType<Tailordb.ClientConfig>({ apiKey: "secret" });
     assertType<Tailordb.ClientConfig>({
       apiKey: "secret",
       namespace: "default",
@@ -16,10 +15,13 @@ describe("ClientConfig with required UserClientConfig field", () => {
 
     // @ts-expect-error - apiKey is required
     assertType<Tailordb.ClientConfig>({ namespace: "default" });
+
+    // @ts-expect-error - namespace is required
+    assertType<Tailordb.ClientConfig>({ apiKey: "secret" });
   });
 
   test("should verify type structure with expectTypeOf", () => {
-    type Expected = { apiKey: string; namespace?: string };
+    type Expected = { apiKey: string; namespace: string };
     expectTypeOf<Tailordb.ClientConfig>().toExtend<Expected>();
     expectTypeOf<Expected>().toExtend<Tailordb.ClientConfig>();
   });
