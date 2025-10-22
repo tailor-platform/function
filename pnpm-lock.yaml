@@ -9,10 +9,10 @@ importers:
   .:
     devDependencies:
       '@changesets/changelog-github':
-        specifier: ^0.5.1
+        specifier: 0.5.1
         version: 0.5.1
       '@changesets/cli':
-        specifier: ^2.29.7
+        specifier: 2.29.7
         version: 2.29.7(@types/node@22.18.8)
 
   packages/kysely-tailordb:
@@ -94,7 +94,7 @@ importers:
         specifier: 8.5.0
         version: 8.5.0(typescript@5.9.2)
       typeorm:
-        specifier: ^0.3.20
+        specifier: 0.3.27
         version: 0.3.27(reflect-metadata@0.2.2)
       typescript:
         specifier: 5.9.2
