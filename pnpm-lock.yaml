@@ -24,8 +24,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       '@tsconfig/recommended':
-        specifier: 1.0.10
-        version: 1.0.10
+        specifier: 1.0.11
+        version: 1.0.11
       kysely:
         specifier: 0.28.1
         version: 0.28.1
@@ -88,8 +88,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       '@tsconfig/recommended':
-        specifier: 1.0.10
-        version: 1.0.10
+        specifier: 1.0.11
+        version: 1.0.11
       tsup:
         specifier: 8.5.0
         version: 8.5.0(typescript@5.9.2)
@@ -752,8 +752,8 @@ packages:
   '@sqltools/formatter@1.2.5':
     resolution: {integrity: sha512-Uy0+khmZqUrUGm5dmMqVlnvufZRSK0FbYzVgp0UMstm+F5+W2/jnEEQyc9vo1ZR/E5ZI/B1WjjoTqBqwJL6Krw==}
 
-  '@tsconfig/recommended@1.0.10':
-    resolution: {integrity: sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==}
+  '@tsconfig/recommended@1.0.11':
+    resolution: {integrity: sha512-irACIVvr9SnQK+zsrO7TkBVTq9LAafdyrjUxv6qgNh2wPi3/hFHcKEWMMlOd4HnRIDMdtI7ciVoPcZ9EuB7xMg==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -2383,7 +2383,7 @@ snapshots:
 
   '@sqltools/formatter@1.2.5': {}
 
-  '@tsconfig/recommended@1.0.10': {}
+  '@tsconfig/recommended@1.0.11': {}
 
   '@types/estree@1.0.8': {}
 
