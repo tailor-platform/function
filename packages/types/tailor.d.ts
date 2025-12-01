@@ -117,7 +117,7 @@ declare namespace tailor.iconv {
  */
 declare class TailorDBFileError extends Error {
   name: 'TailorDBFileError';
-  code?: 'INVALID_PARAMS' | 'INVALID_DATA_TYPE' | 'OPERATION_FAILED' | 'DELETE_FAILED' | 'STREAM_OPEN_FAILED' | 'STREAM_READ_ERROR' | 'STREAM_ERROR';
+  code?: 'INVALID_PARAMS' | 'INVALID_DATA_TYPE' | 'OPERATION_FAILED' | 'DELETE_FAILED' | 'STREAM_OPEN_FAILED' | 'STREAM_READ_ERROR' | 'STREAM_ERROR' | 'FILE_TOO_LARGE';
   cause?: unknown;
 }
 
@@ -135,6 +135,8 @@ interface UploadMetadata {
 interface DownloadMetadata {
   contentType: string;
   fileSize: number;
+  sha256sum: string;
+  lastUploadedAt: string;
 }
 
 /**
@@ -180,6 +182,14 @@ interface FileDownloadResponse {
 }
 
 /**
+ * Download as Base64 response interface
+ */
+interface FileDownloadAsBase64Response {
+  data: string;
+  metadata: DownloadMetadata;
+}
+
+/**
  * Stream chunk types
  */
 type StreamValue =
@@ -220,6 +230,20 @@ interface TailorDBFileAPI {
     fieldName: string,
     recordId: string
   ): Promise<FileDownloadResponse>;
+
+  /**
+   * Download a file from TailorDB as Base64 string
+   * Unlike download which returns decoded binary data (Uint8Array),
+   * this returns the raw Base64-encoded string for use cases requiring
+   * Base64 format (e.g., embedding in JSON responses, data URIs)
+   * @throws {TailorDBFileError} FILE_TOO_LARGE if file exceeds 10MB - use openDownloadStream() for large files
+   */
+  downloadAsBase64(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string
+  ): Promise<FileDownloadAsBase64Response>;
 
   /**
    * Delete a file from TailorDB
