@@ -223,6 +223,7 @@ interface TailorDBFileAPI {
 
   /**
    * Download a file from TailorDB
+   * @throws {TailorDBFileError} FILE_TOO_LARGE if file exceeds 10MB - use openDownloadStream() for large files
    */
   download(
     namespace: string,
