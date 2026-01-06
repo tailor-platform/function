@@ -334,3 +334,7 @@ declare namespace tailor.workflow {
      */
     function triggerJobFunction(job_name: string, args?: any): any;
 }
+
+declare class TailorErrorMessage extends Error {
+  constructor(message?: string);
+}
