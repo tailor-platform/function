@@ -277,6 +277,132 @@ interface TailorDBFileAPI {
   ): Promise<FileStreamIterator>;
 }
 
+declare namespace tailor.idp {
+  /**
+   * Configuration for creating an IDP Client
+   */
+  interface ClientConfig {
+    namespace: string;
+  }
+
+  /**
+   * User object returned from IDP operations
+   */
+  interface User {
+    id: string;
+    name: string;
+    disabled: boolean;
+    createdAt?: string;
+    updatedAt?: string;
+  }
+
+  /**
+   * Query options for filtering users
+   */
+  interface UserQuery {
+    /** Filter by user IDs */
+    ids?: string[];
+    /** Filter by user names */
+    names?: string[];
+  }
+
+  /**
+   * Options for listing users
+   */
+  interface ListUsersOptions {
+    /** Maximum number of users to return */
+    first?: number;
+    /** Page token for pagination */
+    after?: string;
+    /** Query filter for users */
+    query?: UserQuery;
+  }
+
+  /**
+   * Response from listing users
+   */
+  interface ListUsersResponse {
+    users: User[];
+    nextPageToken: string | null;
+    totalCount: number;
+  }
+
+  /**
+   * Input for creating a new user
+   */
+  interface CreateUserInput {
+    /** The user's name (typically email) */
+    name: string;
+    /** The user's password */
+    password: string;
+    /** Whether the user is disabled */
+    disabled?: boolean;
+  }
+
+  /**
+   * Input for updating an existing user
+   */
+  interface UpdateUserInput {
+    /** The user's ID */
+    id: string;
+    /** New name for the user */
+    name?: string;
+    /** New password for the user */
+    password?: string;
+    /** New disabled status for the user */
+    disabled?: boolean;
+  }
+
+  /**
+   * Input for sending a password reset email
+   */
+  interface SendPasswordResetEmailInput {
+    /** The ID of the user */
+    userId: string;
+    /** The URI to redirect to after password reset */
+    redirectUri: string;
+  }
+
+  /**
+   * IDP Client for user management operations
+   */
+  class Client {
+    constructor(config: ClientConfig);
+
+    /**
+     * List users in the namespace with optional filtering and pagination.
+     */
+    users(options?: ListUsersOptions): Promise<ListUsersResponse>;
+
+    /**
+     * Get a user by ID.
+     */
+    user(userId: string): Promise<User>;
+
+    /**
+     * Create a new user.
+     */
+    createUser(input: CreateUserInput): Promise<User>;
+
+    /**
+     * Update an existing user.
+     */
+    updateUser(input: UpdateUserInput): Promise<User>;
+
+    /**
+     * Delete a user by ID.
+     * @returns True if successful
+     */
+    deleteUser(userId: string): Promise<boolean>;
+
+    /**
+     * Send a password reset email to a user.
+     * @returns True if successful
+     */
+    sendPasswordResetEmail(input: SendPasswordResetEmailInput): Promise<boolean>;
+  }
+}
+
 declare namespace tailor.workflow {
     /**
      * Specifies the machine user that should be used to execute the workflow.
