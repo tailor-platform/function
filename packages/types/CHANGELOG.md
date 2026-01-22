@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.8.1
+
+### Patch Changes
+
+- [#128](https://github.com/tailor-platform/function/pull/128) [`84ce6ba`](https://github.com/tailor-platform/function/commit/84ce6ba209e0c7bf51d0646ecfdcc32403904da6) Thanks [@k1LoW](https://github.com/k1LoW)! - feat: Add tailor.idp namespace type definitions
+
 ## 0.7.2
 
 ### Patch Changes
