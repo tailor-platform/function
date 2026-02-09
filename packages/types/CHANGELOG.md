@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.8.2
+
+### Patch Changes
+
+- [#131](https://github.com/tailor-platform/function/pull/131) [`cdac331`](https://github.com/tailor-platform/function/commit/cdac3319608f5b6b425545ceaae795088bfb7047) Thanks [@k1LoW](https://github.com/k1LoW)! - Make `password` optional in `CreateUserInput` and add `clearPassword` to `UpdateUserInput`
+
 ## 0.8.1
 
 ### Patch Changes
