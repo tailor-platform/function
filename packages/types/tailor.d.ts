@@ -333,8 +333,8 @@ declare namespace tailor.idp {
   interface CreateUserInput {
     /** The user's name (typically email) */
     name: string;
-    /** The user's password */
-    password: string;
+    /** The user's password. If omitted, the user is created without a password (cannot log in with any password). */
+    password?: string;
     /** Whether the user is disabled */
     disabled?: boolean;
   }
@@ -347,8 +347,10 @@ declare namespace tailor.idp {
     id: string;
     /** New name for the user */
     name?: string;
-    /** New password for the user */
+    /** New password for the user. Cannot be used with clearPassword. */
     password?: string;
+    /** If true, remove the user's password. Cannot be used with password. */
+    clearPassword?: boolean;
     /** New disabled status for the user */
     disabled?: boolean;
   }
