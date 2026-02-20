@@ -33,7 +33,7 @@
     "@types/node": "22.19.11",
     "esbuild": "0.27.1",
     "kysely": "0.28.2",
-    "kysely-codegen": "0.18.5",
+    "kysely-codegen": "0.20.0",
     "typescript": "5.9.3",
     "unenv": "1.10.0"
   }
