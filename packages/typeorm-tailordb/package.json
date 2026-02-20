@@ -35,7 +35,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@tailor-platform/function-types": "workspace:*",
 		"@tsconfig/recommended": "1.0.13",
-		"tsup": "8.5.0",
+		"tsup": "8.5.1",
 		"typeorm": "0.3.27",
 		"typescript": "5.9.3"
 	},
