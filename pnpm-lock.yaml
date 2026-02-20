@@ -27,8 +27,8 @@ importers:
         specifier: 1.0.13
         version: 1.0.13
       kysely:
-        specifier: 0.28.1
-        version: 0.28.1
+        specifier: 0.28.11
+        version: 0.28.11
       tsup:
         specifier: 8.5.1
         version: 8.5.1(typescript@5.9.3)
@@ -61,11 +61,11 @@ importers:
         specifier: 0.27.3
         version: 0.27.3
       kysely:
-        specifier: 0.28.2
-        version: 0.28.2
+        specifier: 0.28.11
+        version: 0.28.11
       kysely-codegen:
         specifier: 0.18.5
-        version: 0.18.5(kysely@0.28.2)(typescript@5.9.3)
+        version: 0.18.5(kysely@0.28.11)(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1153,13 +1153,9 @@ packages:
       tedious:
         optional: true
 
-  kysely@0.28.1:
-    resolution: {integrity: sha512-umkhsHB0y2JvI83DUtuYYTfvr063xTHTcr/k1z0E2Bg39zGiBcdDvlbP79YMcItn55pKQtD120sZmKa9jhCVtw==}
-    engines: {node: '>=18.0.0'}
-
-  kysely@0.28.2:
-    resolution: {integrity: sha512-4YAVLoF0Sf0UTqlhgQMFU9iQECdah7n+13ANkiuVfRvlK+uI0Etbgd7bVP36dKlG+NXWbhGua8vnGt+sdhvT7A==}
-    engines: {node: '>=18.0.0'}
+  kysely@0.28.11:
+    resolution: {integrity: sha512-zpGIFg0HuoC893rIjYX1BETkVWdDnzTzF5e0kWXJFg5lE0k1/LfNWBejrcnOFu8Q2Rfq/hTDTU7XLUM8QOrpzg==}
+    engines: {node: '>=20.0.0'}
 
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
@@ -2623,14 +2619,14 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  kysely-codegen@0.18.5(kysely@0.28.2)(typescript@5.9.3):
+  kysely-codegen@0.18.5(kysely@0.28.11)(typescript@5.9.3):
     dependencies:
       chalk: 4.1.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
       dotenv: 16.6.1
       dotenv-expand: 12.0.3
       git-diff: 2.0.6
-      kysely: 0.28.2
+      kysely: 0.28.11
       micromatch: 4.0.8
       minimist: 1.2.8
       pluralize: 8.0.0
@@ -2638,9 +2634,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  kysely@0.28.1: {}
-
-  kysely@0.28.2: {}
+  kysely@0.28.11: {}
 
   lilconfig@3.1.3: {}
 
