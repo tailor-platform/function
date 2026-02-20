@@ -32,7 +32,7 @@
     "@types/fs-extra": "11.0.4",
     "@types/node": "22.19.11",
     "esbuild": "0.27.3",
-    "kysely": "0.28.2",
+    "kysely": "0.28.11",
     "kysely-codegen": "0.18.5",
     "typescript": "5.9.3",
     "unenv": "1.10.0"
