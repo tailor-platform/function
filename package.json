@@ -8,7 +8,7 @@
     "@changesets/changelog-github": "0.6.0",
     "@changesets/cli": "2.30.0"
   },
-  "packageManager": "pnpm@10.28.1",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": "22.x"
   }
