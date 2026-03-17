@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.8.3
+
+### Patch Changes
+
+- [#150](https://github.com/tailor-platform/function/pull/150) [`02134c6`](https://github.com/tailor-platform/function/commit/02134c6ce2014a7f82440650c4d4f9345be96f7b) Thanks [@k1LoW](https://github.com/k1LoW)! - Add `userByName` method to `tailor.idp.Client` for fetching a user by name
+
 ## 0.8.2
 
 ### Patch Changes
