@@ -382,6 +382,11 @@ declare namespace tailor.idp {
     user(userId: string): Promise<User>;
 
     /**
+     * Get a user by name.
+     */
+    userByName(name: string): Promise<User>;
+
+    /**
      * Create a new user.
      */
     createUser(input: CreateUserInput): Promise<User>;
