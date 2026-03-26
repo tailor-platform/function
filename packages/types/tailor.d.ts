@@ -466,4 +466,29 @@ declare namespace tailor.workflow {
      implementation.
      */
     function triggerJobFunction(job_name: string, args?: any): any;
+
+    /**
+     * Suspends the current workflow execution and waits for an external signal to resume.
+     * The workflow will be parked in "Waiting" status until resolved via `resolve()`.
+     *
+     * @param key - A unique key identifying this wait point. Must match `^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$`.
+     * @param payload - Optional JSON-serializable payload persisted with the wait. Accessible by the resolve callback.
+     * @returns The result provided by the `resolve()` callback when the workflow resumes.
+     */
+    function wait(key: string, payload?: any): any;
+
+    /**
+     * Resolves a waiting workflow execution, causing it to resume.
+     * The callback receives the wait payload and must return a JSON-serializable result
+     * that will be passed back to the `wait()` caller.
+     *
+     * @param executionId - The workflow execution ID to resolve
+     * @param key - The wait key that was used in the `wait()` call
+     * @param callback - A function that receives the wait payload and returns a result
+     */
+    function resolve(
+        executionId: string,
+        key: string,
+        callback: (waitPayload: any) => any
+    ): Promise<void>;
 }
