@@ -363,6 +363,10 @@ declare namespace tailor.idp {
     userId: string;
     /** The URI to redirect to after password reset */
     redirectUri: string;
+    /** The sender display name. Defaults to 'Tailor Platform IdP'. */
+    fromName?: string;
+    /** The email subject line. Defaults to the localized default subject. */
+    subject?: string;
   }
 
   /**
