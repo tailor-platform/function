@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.8.4
+
+### Patch Changes
+
+- [#158](https://github.com/tailor-platform/function/pull/158) [`dc091f4`](https://github.com/tailor-platform/function/commit/dc091f48c30eef11304191af946c43b8f675ea37) Thanks [@k1LoW](https://github.com/k1LoW)! - Add optional `fromName` and `subject` params to `SendPasswordResetEmailInput`
+
 ## 0.8.3
 
 ### Patch Changes
