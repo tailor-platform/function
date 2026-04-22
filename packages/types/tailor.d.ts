@@ -496,3 +496,27 @@ declare namespace tailor.workflow {
         callback: (waitPayload: any) => any
     ): Promise<void>;
 }
+
+declare namespace tailor.context {
+    /**
+     * Information about the invoker of the current function execution.
+     */
+    interface Invoker {
+        /** The invoker's ID */
+        id: string;
+        /** The invoker's type */
+        type: "user" | "machine_user";
+        /** The workspace ID */
+        workspaceId: string;
+        /** The invoker's attribute IDs */
+        attributes: string[];
+        /** The invoker's attribute map */
+        attributeMap: Record<string, unknown>;
+    }
+
+    /**
+     * Returns information about the invoker of the current function execution,
+     * or `null` for anonymous invocations.
+     */
+    function getInvoker(): Invoker | null;
+}
