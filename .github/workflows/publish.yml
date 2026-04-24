@@ -22,9 +22,8 @@ jobs:
           node-version-file: ./package.json
           registry-url: https://registry.npmjs.org
       
-      - name: Update npm and setup pnpm
+      - name: Setup pnpm
         run: |
-          npm i -g npm@latest
           npm i -g corepack@latest
           corepack enable
 
