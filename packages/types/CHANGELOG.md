@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.8.5
+
+### Patch Changes
+
+- [#169](https://github.com/tailor-platform/function/pull/169) [`eb7a92d`](https://github.com/tailor-platform/function/commit/eb7a92d424d6d6dbc5c55559d2f21e5bcb4b5aec) Thanks [@remiposo](https://github.com/remiposo)! - Add `tailor.context` namespace with `getInvoker()` for retrieving information about the invoker of the current function execution
+
 ## 0.8.4
 
 ### Patch Changes
