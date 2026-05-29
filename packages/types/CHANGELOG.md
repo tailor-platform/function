@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.9.0
+
+### Minor Changes
+
+- [#178](https://github.com/tailor-platform/function/pull/178) [`1b2e22b`](https://github.com/tailor-platform/function/commit/1b2e22b6f9895fd25df353a4680fb2bd6465b9b7) Thanks [@haru0017](https://github.com/haru0017)! - Add `downloadStream` and `uploadStream` types to `TailorDBFileAPI`. Mark `openDownloadStream` as deprecated.
+
 ## 0.8.5
 
 ### Patch Changes
