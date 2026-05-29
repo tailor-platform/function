@@ -167,6 +167,14 @@ interface FileUploadOptions {
 }
 
 /**
+ * Upload stream options interface
+ */
+interface FileUploadStreamOptions {
+  contentType?: string;
+  fileSize?: number;
+}
+
+/**
  * Upload response interface
  */
 interface FileUploadResponse {
@@ -186,6 +194,14 @@ interface FileDownloadResponse {
  */
 interface FileDownloadAsBase64Response {
   data: string;
+  metadata: DownloadMetadata;
+}
+
+/**
+ * Download stream response interface
+ */
+interface FileDownloadStreamResponse {
+  body: ReadableStream<Uint8Array>;
   metadata: DownloadMetadata;
 }
 
@@ -223,7 +239,7 @@ interface TailorDBFileAPI {
 
   /**
    * Download a file from TailorDB
-   * @throws {TailorDBFileError} FILE_TOO_LARGE if file exceeds 10MB - use openDownloadStream() for large files
+   * @throws {TailorDBFileError} FILE_TOO_LARGE if file exceeds 10MB - use downloadStream() for large files
    */
   download(
     namespace: string,
@@ -237,7 +253,7 @@ interface TailorDBFileAPI {
    * Unlike download which returns decoded binary data (Uint8Array),
    * this returns the raw Base64-encoded string for use cases requiring
    * Base64 format (e.g., embedding in JSON responses, data URIs)
-   * @throws {TailorDBFileError} FILE_TOO_LARGE if file exceeds 10MB - use openDownloadStream() for large files
+   * @throws {TailorDBFileError} FILE_TOO_LARGE if file exceeds 10MB - use downloadStream() for large files
    */
   downloadAsBase64(
     namespace: string,
@@ -268,6 +284,7 @@ interface TailorDBFileAPI {
 
   /**
    * Open a download stream for large files
+   * @deprecated Use downloadStream() instead
    */
   openDownloadStream(
     namespace: string,
@@ -275,6 +292,28 @@ interface TailorDBFileAPI {
     fieldName: string,
     recordId: string
   ): Promise<FileStreamIterator>;
+
+  /**
+   * Download a file as a ReadableStream
+   */
+  downloadStream(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string
+  ): Promise<FileDownloadStreamResponse>;
+
+  /**
+   * Upload a file using a ReadableStream
+   */
+  uploadStream(
+    namespace: string,
+    typeName: string,
+    fieldName: string,
+    recordId: string,
+    readableStream: ReadableStream<Uint8Array | ArrayBuffer>,
+    options?: FileUploadStreamOptions
+  ): Promise<FileUploadResponse>;
 }
 
 declare namespace tailor.idp {
