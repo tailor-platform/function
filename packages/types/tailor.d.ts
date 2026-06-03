@@ -332,7 +332,6 @@ declare namespace tailor.idp {
     name: string;
     disabled: boolean;
     createdAt?: string;
-    updatedAt?: string;
   }
 
   /**
