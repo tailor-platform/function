@@ -9,3 +9,5 @@ onlyBuiltDependencies:
 minimumReleaseAgeExclude:
   # Renovate security update: kysely@0.28.17
   - kysely@0.28.17
+  # Renovate security update: esbuild@0.28.1
+  - esbuild@0.28.1
