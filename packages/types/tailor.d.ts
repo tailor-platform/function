@@ -61,6 +61,27 @@ declare namespace tailor.authconnection {
   function getConnectionToken(connectionName: string): Promise<any>;
 }
 
+declare namespace tailor.aigateway {
+  /**
+   * AIGateway describes a resolved AI Gateway in the caller's workspace.
+   */
+  interface AIGateway {
+    /**
+     * Base URL of the AI Gateway, e.g.
+     * `https://my-aigateway-<workspace_hash>.ai.erp.dev`. Requests to this URL
+     * are automatically authenticated for the calling workspace.
+     */
+    url: string;
+  }
+
+  /**
+   * get resolves a named AI Gateway in the caller's own workspace and returns
+   * it. The gateway's existence is verified at call time, so resolving a name
+   * that does not exist rejects rather than failing later inside `fetch`.
+   */
+  function get(name: string): Promise<AIGateway>;
+}
+
 declare namespace tailor.iconv {
   /**
    * Convert string from one encoding to another
