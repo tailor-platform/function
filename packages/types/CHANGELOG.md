@@ -1,5 +1,15 @@
 # @tailor-platform/function-types
 
+## 0.10.0
+
+### Minor Changes
+
+- [#189](https://github.com/tailor-platform/function/pull/189) [`2e2f241`](https://github.com/tailor-platform/function/commit/2e2f241b0e9bb1480de7e376abbef3cd27aae30d) Thanks [@dragon3](https://github.com/dragon3)! - Add `tailor.aigateway.get(name)` types for resolving an AI Gateway URL in the caller's workspace.
+
+### Patch Changes
+
+- [#180](https://github.com/tailor-platform/function/pull/180) [`a36c24f`](https://github.com/tailor-platform/function/commit/a36c24faa835a350617b4f29c6e848894bcdc1e3) Thanks [@k1LoW](https://github.com/k1LoW)! - Remove non-existent `updatedAt` field from `tailor.idp.User`
+
 ## 0.9.0
 
 ### Minor Changes
