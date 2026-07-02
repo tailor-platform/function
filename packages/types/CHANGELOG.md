@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.10.2
+
+### Patch Changes
+
+- [#193](https://github.com/tailor-platform/function/pull/193) [`d3cf52e`](https://github.com/tailor-platform/function/commit/d3cf52ec9534361b620261469c1b2564ded9f130) Thanks [@toiroakr](https://github.com/toiroakr)! - Remove the "known gap" note about `tailor.aigateway` from the deprecation README now that `@tailor-platform/sdk@1.73.0` adds a runtime wrapper for it (`aigateway.get(name)`, imported from `@tailor-platform/sdk/runtime`).
+
 ## 0.10.1
 
 ### Patch Changes
