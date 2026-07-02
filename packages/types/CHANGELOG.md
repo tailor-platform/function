@@ -1,5 +1,11 @@
 # @tailor-platform/function-types
 
+## 0.10.1
+
+### Patch Changes
+
+- [#190](https://github.com/tailor-platform/function/pull/190) [`09dfbcc`](https://github.com/tailor-platform/function/commit/09dfbccaa0449077bf0e768bb85939918de2709f) Thanks [@toiroakr](https://github.com/toiroakr)! - Deprecate this package in favor of `@tailor-platform/sdk`, which now covers the same `tailor.*` / `tailordb.*` runtime surface. The README documents the deprecation and migration steps.
+
 ## 0.10.0
 
 ### Minor Changes
