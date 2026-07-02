@@ -2,7 +2,7 @@
 
 **Deprecated.** These types are now built into [`@tailor-platform/sdk`](https://www.npmjs.com/package/@tailor-platform/sdk), which exposes the same `tailor.*` / `tailordb.*` runtime surface plus typed wrappers you can import directly instead of relying on ambient globals. New projects should use `@tailor-platform/sdk` instead of this package; existing projects should migrate using the steps below.
 
-This package will no longer receive updates for new runtime APIs (e.g. it never picked up `tailor.aigateway.get()`, while `@tailor-platform/sdk` will keep gaining new runtime APIs).
+This package will no longer receive updates for new runtime APIs, while `@tailor-platform/sdk` will keep gaining new runtime APIs.
 
 ## Migrating to `@tailor-platform/sdk`
 
@@ -33,14 +33,11 @@ This package will no longer receive updates for new runtime APIs (e.g. it never 
 Instead of relying on the ambient `tailor` / `tailordb` globals, `@tailor-platform/sdk/runtime` exposes the same APIs as regular imports, which is easier to trace and doesn't require the `tsconfig.json` `types` change above:
 
 ```typescript
-import { iconv, secretmanager, idp, workflow, context, authconnection, file } from "@tailor-platform/sdk/runtime";
+import { iconv, secretmanager, idp, workflow, context, authconnection, aigateway, file } from "@tailor-platform/sdk/runtime";
 
 const secret = await secretmanager.getSecret("my-vault", "API_KEY");
+const gateway = await aigateway.get("my-aigateway");
 ```
-
-### Known gap: `tailor.aigateway`
-
-`@tailor-platform/sdk` does not yet expose a runtime equivalent of `tailor.aigateway.get(name)`. If your code uses it, keep this package installed alongside `@tailor-platform/sdk` for that one namespace until the SDK adds support, or reach out to the SDK team if you need this migrated sooner.
 
 ## Legacy usage (this package)
 
