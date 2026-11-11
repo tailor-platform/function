@@ -27,7 +27,7 @@
     "zx": "^8.5.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.6.6",
     "@tailor-platform/function-types": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "@types/node": "24.19.2",

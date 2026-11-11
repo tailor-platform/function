@@ -38,7 +38,7 @@ export class TailordbDialect implements Dialect {
     return new PostgresAdapter();
   }
 
-  // biome-ignore lint/suspicious/noExplicitAny:
+  // biome-ignore lint/suspicious/noExplicitAny: the Dialect interface takes a Kysely of any database
   createIntrospector(db: Kysely<any>): DatabaseIntrospector {
     return new PostgresIntrospector(db);
   }
@@ -102,7 +102,7 @@ class TailordbConnection implements DatabaseConnection {
     };
   }
 
-  // biome-ignore lint/correctness/useYield:
+  // biome-ignore lint/correctness/useYield: streaming is not supported, so the generator only throws
   async *streamQuery(_compiledQuery: CompiledQuery, _chunkSize: number) {
     throw new Error("Not supported");
   }
