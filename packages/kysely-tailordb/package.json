@@ -13,7 +13,7 @@
   "scripts": {
     "check": "biome check .",
     "check-write": "biome check --write .",
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "build": "tsdown",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit && tsc --noEmit -p type-tests",
     "prepublishOnly": "pnpm run build"
@@ -34,7 +34,7 @@
     "@tailor-platform/sdk": "2.38.0",
     "@tsconfig/recommended": "1.0.13",
     "kysely": "0.29.8",
-    "tsup": "9.0.0",
+    "tsdown": "0.23.7",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
