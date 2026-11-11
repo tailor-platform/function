@@ -34,7 +34,7 @@
     "esbuild": "0.28.2",
     "kysely": "0.29.8",
     "kysely-codegen": "0.18.5",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "unenv": "1.10.0"
   }
 }
