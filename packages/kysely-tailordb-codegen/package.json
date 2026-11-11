@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "commander": "^15.1.0",
-    "zx": "^8.5.4"
+    "zx": "^8.8.5"
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.6",

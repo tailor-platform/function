@@ -45,7 +45,7 @@ importers:
         specifier: ^15.1.0
         version: 15.1.0
       zx:
-        specifier: ^8.5.4
+        specifier: ^8.8.5
         version: 8.8.5
     devDependencies:
       '@biomejs/biome':
