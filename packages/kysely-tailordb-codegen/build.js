@@ -62,12 +62,18 @@ const getInjectContent = (globalName, globalInject) => {
 };
 
 // Mock packages that are difficult to bundle and not used in the current use case.
+// kysely-codegen 0.20 requires typescript without declaring it. Its only use here
+// is guarded by try/catch and does not affect the output without custom imports,
+// while bundling the real compiler yields a file that fails to load.
 const mockPackages = {
   name: "mock-packages",
   setup(build) {
-    build.onResolve({ filter: /^(git-diff|cosmiconfig)$/ }, (args) => {
-      return { path: args.path, namespace: "mock-packages" };
-    });
+    build.onResolve(
+      { filter: /^(git-diff|cosmiconfig|typescript)$/ },
+      (args) => {
+        return { path: args.path, namespace: "mock-packages" };
+      },
+    );
     build.onLoad({ filter: /.*/, namespace: "mock-packages" }, () => {
       return { contents: "export default null" };
     });
