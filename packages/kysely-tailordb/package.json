@@ -15,7 +15,7 @@
     "check-write": "biome check --write .",
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
     "clean": "rm -rf dist",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit && tsc --noEmit -p type-tests",
     "prepublishOnly": "pnpm run build"
   },
   "exports": {
@@ -30,6 +30,8 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@tailor-platform/function-types": "workspace:*",
+    "@tailor-platform/sdk": "2.38.0",
     "@tsconfig/recommended": "1.0.13",
     "kysely": "0.28.17",
     "tsup": "8.5.1",
