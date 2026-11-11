@@ -30,8 +30,8 @@ importers:
         specifier: 1.0.13
         version: 1.0.13
       kysely:
-        specifier: 0.28.17
-        version: 0.28.17
+        specifier: 0.29.8
+        version: 0.29.8
       tsup:
         specifier: 8.5.1
         version: 8.5.1(typescript@5.9.3)(yaml@2.9.1)
@@ -64,11 +64,11 @@ importers:
         specifier: 0.28.1
         version: 0.28.1
       kysely:
-        specifier: 0.28.17
-        version: 0.28.17
+        specifier: 0.29.8
+        version: 0.29.8
       kysely-codegen:
         specifier: 0.18.5
-        version: 0.18.5(kysely@0.28.17)(typescript@5.9.3)
+        version: 0.18.5(kysely@0.29.8)(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -1849,12 +1849,12 @@ packages:
       tedious:
         optional: true
 
-  kysely@0.28.17:
-    resolution: {integrity: sha512-nbD8lB9EB3wNdMhOCdx5Li8DxnLbvKByylRLcJ1h+4SkrowVeECAyZlyiKMThF7xFdRz0jSQ2MoJr+wXux2y0Q==}
-    engines: {node: '>=20.0.0'}
-
   kysely@0.29.7:
     resolution: {integrity: sha512-fmIq+7kv4WbFm2tcfznRzikqB4cuNpgZ40PSU2fAJ2/OO5XhojqnTPrmgrCjYSRJVwBln03XcRXJGnw9H099IQ==}
+    engines: {node: '>=22.0.0'}
+
+  kysely@0.29.8:
+    resolution: {integrity: sha512-ixHU1H4R+LeC5Y0nAhYgiGRFpFRHm2DXKEmJSs/vbes9sKXyssyzxzE/NYiOJX5fY0BL28biCre3GqlCqUwyXQ==}
     engines: {node: '>=22.0.0'}
 
   lilconfig@3.1.4:
@@ -3788,14 +3788,14 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  kysely-codegen@0.18.5(kysely@0.28.17)(typescript@5.9.3):
+  kysely-codegen@0.18.5(kysely@0.29.8)(typescript@5.9.3):
     dependencies:
       chalk: 4.1.2
       cosmiconfig: 9.0.2(typescript@5.9.3)
       dotenv: 16.6.1
       dotenv-expand: 12.0.3
       git-diff: 2.0.7
-      kysely: 0.28.17
+      kysely: 0.29.8
       micromatch: 4.0.8
       minimist: 1.2.8
       pluralize: 8.0.0
@@ -3803,9 +3803,9 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  kysely@0.28.17: {}
-
   kysely@0.29.7: {}
+
+  kysely@0.29.8: {}
 
   lilconfig@3.1.4: {}
 
