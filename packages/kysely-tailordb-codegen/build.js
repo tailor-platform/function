@@ -62,18 +62,16 @@ const getInjectContent = (globalName, globalInject) => {
 };
 
 // Mock packages that are difficult to bundle and not used in the current use case.
-// kysely-codegen 0.20 requires typescript without declaring it. Its only use here
-// is guarded by try/catch and does not affect the output without custom imports,
-// while bundling the real compiler yields a file that fails to load.
+// kysely-codegen 0.20 requires typescript without declaring it, so esbuild bundles
+// whichever version is installed (6.x brings in the whole CommonJS compiler, which
+// fails to load as ESM because `__filename` is undefined). It only parses types for
+// custom imports and overrides, which src/function.ts does not pass.
 const mockPackages = {
   name: "mock-packages",
   setup(build) {
-    build.onResolve(
-      { filter: /^(git-diff|cosmiconfig|typescript)$/ },
-      (args) => {
-        return { path: args.path, namespace: "mock-packages" };
-      },
-    );
+    build.onResolve({ filter: /^(cosmiconfig|typescript)$/ }, (args) => {
+      return { path: args.path, namespace: "mock-packages" };
+    });
     build.onLoad({ filter: /.*/, namespace: "mock-packages" }, () => {
       return { contents: "export default null" };
     });
