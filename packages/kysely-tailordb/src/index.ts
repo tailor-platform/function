@@ -14,8 +14,17 @@ import {
   type TransactionSettings,
 } from "kysely";
 
+interface TailordbClient {
+  connect(): Promise<void>;
+  end(): Promise<void>;
+  queryObject<O>(
+    sql: string,
+    args?: readonly unknown[],
+  ): Promise<{ rows: O[]; command: string; rowCount: number }>;
+}
+
 export class TailordbDialect implements Dialect {
-  constructor(private client: Tailordb.Client) {}
+  constructor(private client: TailordbClient) {}
 
   createDriver(): Driver {
     return new TailordbDriver(this.client);
@@ -36,7 +45,7 @@ export class TailordbDialect implements Dialect {
 }
 
 class TailordbDriver implements Driver {
-  constructor(private client: Tailordb.Client) {}
+  constructor(private client: TailordbClient) {}
 
   async init(): Promise<void> {
     await this.client.connect();
@@ -72,7 +81,7 @@ class TailordbDriver implements Driver {
 }
 
 class TailordbConnection implements DatabaseConnection {
-  constructor(private client: Tailordb.Client) {}
+  constructor(private client: TailordbClient) {}
 
   async executeQuery<O>(compiledQuery: CompiledQuery): Promise<QueryResult<O>> {
     const result = await this.client.queryObject<O>(compiledQuery.sql, [
