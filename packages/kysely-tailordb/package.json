@@ -34,8 +34,8 @@
     "@tailor-platform/sdk": "2.38.0",
     "@tsconfig/recommended": "1.0.13",
     "kysely": "0.29.8",
-    "tsup": "8.5.1",
-    "typescript": "5.9.3"
+    "tsup": "9.0.0",
+    "typescript": "6.0.3"
   },
   "peerDependencies": {
     "kysely": ">= 0.24.0 < 1"
