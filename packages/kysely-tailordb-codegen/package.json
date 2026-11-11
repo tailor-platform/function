@@ -23,7 +23,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "commander": "^15.1.0",
+    "commander": "^14.0.0",
     "zx": "^8.8.5"
   },
   "devDependencies": {
