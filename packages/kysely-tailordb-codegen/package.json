@@ -24,17 +24,17 @@
   },
   "dependencies": {
     "commander": "^14.0.0",
-    "zx": "^8.5.4"
+    "zx": "^8.8.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.6.6",
     "@tailor-platform/function-types": "workspace:*",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "22.20.5",
-    "esbuild": "0.28.1",
-    "kysely": "0.28.17",
+    "@types/node": "24.19.2",
+    "esbuild": "0.28.2",
+    "kysely": "0.29.8",
     "kysely-codegen": "0.18.5",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "unenv": "1.10.0"
   }
 }

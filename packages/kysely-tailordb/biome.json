@@ -5,7 +5,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "formatWithErrors": false,
-    "ignore": ["package.json"]
+    "includes": ["**", "!**/package.json", "!**/*.md"]
   },
   "javascript": {
     "formatter": {
@@ -16,17 +16,16 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["**/node_modules/**", "**/dist/**"],
+    "includes": ["**", "!**/node_modules/**", "!**/dist/**"],
     "rules": {
-      "recommended": true
+      "preset": "recommended"
     }
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": true,
+    "root": "../.."
   }
 }

@@ -29,7 +29,7 @@ export default async (args: { namespace: string }) => {
 };
 
 // Since Kysely's parseTableMetadata is not exported, it is copied below.
-// https://github.com/kysely-org/kysely/blob/0.28.2/src/dialect/postgres/postgres-introspector.ts#L103
+// https://github.com/kysely-org/kysely/blob/v0.29.8/src/dialect/postgres/postgres-introspector.ts#L99
 const parseTableMetadata = (columns: RawColumnMetadata[]): TableMetadata[] => {
   return columns.reduce<TableMetadata[]>((tables, it) => {
     let table = tables.find(
@@ -39,6 +39,7 @@ const parseTableMetadata = (columns: RawColumnMetadata[]): TableMetadata[] => {
     if (!table) {
       table = Object.freeze({
         name: it.table,
+        isForeign: it.table_type === "f",
         isView: it.table_type === "v",
         schema: it.schema,
         columns: [],
