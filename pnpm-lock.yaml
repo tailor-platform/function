@@ -27,8 +27,8 @@ importers:
         specifier: 2.40.0
         version: 2.40.0(@clack/prompts@1.8.1)(@types/node@24.19.2)(typescript@7.0.2)
       '@tsconfig/recommended':
-        specifier: 1.0.13
-        version: 1.0.13
+        specifier: 1.0.14
+        version: 1.0.14
       kysely:
         specifier: 0.29.8
         version: 0.29.8
@@ -1177,8 +1177,8 @@ packages:
   '@toiroakr/read-multiline@0.4.3':
     resolution: {integrity: sha512-qvxveKObkZVsnV2aN+rWyE/IitfZtQW42fi8etRKaF5TjZ6tr4sjcit0tSWquq9cTPpU1CF5JywmR4akulisKg==}
 
-  '@tsconfig/recommended@1.0.13':
-    resolution: {integrity: sha512-sySRuBfMKyKO/j2ZAhR8kSembhjuPEV4Ra3AHtmWLq51+iGaudr45crPSzNC5b7/Ctrh9dfUpBuTlYrH6rM58Q==}
+  '@tsconfig/recommended@1.0.14':
+    resolution: {integrity: sha512-iYgWhyVNgsxXiflM97anZ6sVmKTmcMSCL9x7RutV7owLOb8b+hmLPtmd6wqeKvvkaWa4Zx4eOWfn56Fc2KMHrA==}
 
   '@tybys/wasm-util@0.10.4':
     resolution: {integrity: sha512-W3c4gRigFS0T/Ma4qIYF3GDAc5AQdHb1yL5znJT1Zv1YaD9Kitx656wBjvr19qbiosmZT8lWDM5BEMynUqX65A==}
@@ -2826,7 +2826,7 @@ snapshots:
 
   '@toiroakr/read-multiline@0.4.3': {}
 
-  '@tsconfig/recommended@1.0.13': {}
+  '@tsconfig/recommended@1.0.14': {}
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
