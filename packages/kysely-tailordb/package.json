@@ -32,7 +32,7 @@
     "@biomejs/biome": "2.6.7",
     "@tailor-platform/function-types": "workspace:*",
     "@tailor-platform/sdk": "2.40.0",
-    "@tsconfig/recommended": "1.0.13",
+    "@tsconfig/recommended": "1.0.14",
     "kysely": "0.29.8",
     "tsdown": "0.23.7",
     "typescript": "7.0.2"
