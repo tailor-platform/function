@@ -31,7 +31,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.6.7",
     "@tailor-platform/function-types": "workspace:*",
-    "@tailor-platform/sdk": "2.40.0",
+    "@tailor-platform/sdk": "2.42.0",
     "@tsconfig/recommended": "1.0.14",
     "kysely": "0.29.9",
     "tsdown": "0.23.7",
